@@ -1,0 +1,3256 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.7">
+    
+    
+      
+        <title>pyrotation - FMKit</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.cb6bc1d0.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.39b8e14a.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+      
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#pyrotation-module" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href=".." title="FMKit" class="md-header-nav__button md-logo" aria-label="FMKit">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      <div class="md-header-nav__ellipsis">
+        <div class="md-header-nav__topic">
+          <span class="md-ellipsis">
+            FMKit
+          </span>
+        </div>
+        <div class="md-header-nav__topic">
+          <span class="md-ellipsis">
+            
+              pyrotation
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="FMKit" class="md-nav__button md-logo" aria-label="FMKit">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    FMKit
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../arch/" class="md-nav__link">
+        The FMKit Architecture
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../manual_signal/" class="md-nav__link">
+        User Manual - Signal
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+      
+      <label class="md-nav__link" for="nav-4">
+        Code Reference
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Code Reference" data-md-level="1">
+        <label class="md-nav__title" for="nav-4">
+          <span class="md-nav__icon md-icon"></span>
+          Code Reference
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fmsignal-reference/" class="md-nav__link">
+        fmsignal
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fmsignal_vis-reference/" class="md-nav__link">
+        fmsignal_vis
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          pyrotation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        pyrotation
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#pyrotation" class="md-nav__link">
+    pyrotation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pyrotation.Quaternion" class="md-nav__link">
+    Quaternion
+  </a>
+  
+    <nav class="md-nav" aria-label="Quaternion">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pyrotation.Quaternion.__init__" class="md-nav__link">
+    __init__()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pyrotation.Quaternion.add_quaternion" class="md-nav__link">
+    add_quaternion()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pyrotation.Quaternion.angle_axis_to_quaternion" class="md-nav__link">
+    angle_axis_to_quaternion()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pyrotation.Quaternion.conjugate" class="md-nav__link">
+    conjugate()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pyrotation.Quaternion.construct_from_angle_axis" class="md-nav__link">
+    construct_from_angle_axis()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pyrotation.Quaternion.construct_from_rotation_matrix" class="md-nav__link">
+    construct_from_rotation_matrix()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pyrotation.Quaternion.differentiate_local" class="md-nav__link">
+    differentiate_local()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pyrotation.Quaternion.identity" class="md-nav__link">
+    identity()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pyrotation.Quaternion.integrate_local" class="md-nav__link">
+    integrate_local()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pyrotation.Quaternion.interpolate" class="md-nav__link">
+    interpolate()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pyrotation.Quaternion.inverse" class="md-nav__link">
+    inverse()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pyrotation.Quaternion.multiply_quaternion" class="md-nav__link">
+    multiply_quaternion()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pyrotation.Quaternion.multiply_scaler" class="md-nav__link">
+    multiply_scaler()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pyrotation.Quaternion.norm" class="md-nav__link">
+    norm()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pyrotation.Quaternion.normalize" class="md-nav__link">
+    normalize()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pyrotation.Quaternion.quaternion_to_angle_axis" class="md-nav__link">
+    quaternion_to_angle_axis()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pyrotation.Quaternion.quaternion_to_rotation_matrix" class="md-nav__link">
+    quaternion_to_rotation_matrix()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pyrotation.Quaternion.rotate_a_point" class="md-nav__link">
+    rotate_a_point()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pyrotation.Quaternion.rotate_points" class="md-nav__link">
+    rotate_points()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pyrotation.Quaternion.rotation_matrix_to_quaternion" class="md-nav__link">
+    rotation_matrix_to_quaternion()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pyrotation.Quaternion.subtract_quaternion" class="md-nav__link">
+    subtract_quaternion()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pyrotation.Quaternion.to_angle_axis" class="md-nav__link">
+    to_angle_axis()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pyrotation.Quaternion.to_left_matrix" class="md-nav__link">
+    to_left_matrix()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pyrotation.Quaternion.to_right_matrix" class="md-nav__link">
+    to_right_matrix()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pyrotation.Quaternion.to_rotation_matrix" class="md-nav__link">
+    to_rotation_matrix()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pyrotation.alt_azimuth_to_axis" class="md-nav__link">
+    alt_azimuth_to_axis()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pyrotation.angle_axis_to_rotation_matrix" class="md-nav__link">
+    angle_axis_to_rotation_matrix()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pyrotation.axis_to_alt_azimuth" class="md-nav__link">
+    axis_to_alt_azimuth()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pyrotation.euler_zyx_to_rotation_matrix" class="md-nav__link">
+    euler_zyx_to_rotation_matrix()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pyrotation.normalize_rotation_matrix" class="md-nav__link">
+    normalize_rotation_matrix()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pyrotation.orthonormal_basis_from_two_vectors" class="md-nav__link">
+    orthonormal_basis_from_two_vectors()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pyrotation.rotate_a_point_by_angle_axis" class="md-nav__link">
+    rotate_a_point_by_angle_axis()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pyrotation.rotate_a_point_by_rotation_matrix" class="md-nav__link">
+    rotate_a_point_by_rotation_matrix()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pyrotation.rotate_points_by_angle_axis" class="md-nav__link">
+    rotate_points_by_angle_axis()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pyrotation.rotate_points_by_rotation_matrix" class="md-nav__link">
+    rotate_points_by_rotation_matrix()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pyrotation.rotation_matrix_from_orthonormal_basis" class="md-nav__link">
+    rotation_matrix_from_orthonormal_basis()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pyrotation.rotation_matrix_from_xy" class="md-nav__link">
+    rotation_matrix_from_xy()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pyrotation.rotation_matrix_from_yz" class="md-nav__link">
+    rotation_matrix_from_yz()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pyrotation.rotation_matrix_from_zx" class="md-nav__link">
+    rotation_matrix_from_zx()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pyrotation.rotation_matrix_to_angle_axis" class="md-nav__link">
+    rotation_matrix_to_angle_axis()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pyrotation.rotation_matrix_to_euler_angles_zyx" class="md-nav__link">
+    rotation_matrix_to_euler_angles_zyx()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pyrotation.skew_symmetric_matrix_to_vector" class="md-nav__link">
+    skew_symmetric_matrix_to_vector()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pyrotation.vector_to_skew_symmetric_matrix" class="md-nav__link">
+    vector_to_skew_symmetric_matrix()
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#pyrotation" class="md-nav__link">
+    pyrotation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pyrotation.Quaternion" class="md-nav__link">
+    Quaternion
+  </a>
+  
+    <nav class="md-nav" aria-label="Quaternion">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pyrotation.Quaternion.__init__" class="md-nav__link">
+    __init__()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pyrotation.Quaternion.add_quaternion" class="md-nav__link">
+    add_quaternion()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pyrotation.Quaternion.angle_axis_to_quaternion" class="md-nav__link">
+    angle_axis_to_quaternion()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pyrotation.Quaternion.conjugate" class="md-nav__link">
+    conjugate()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pyrotation.Quaternion.construct_from_angle_axis" class="md-nav__link">
+    construct_from_angle_axis()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pyrotation.Quaternion.construct_from_rotation_matrix" class="md-nav__link">
+    construct_from_rotation_matrix()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pyrotation.Quaternion.differentiate_local" class="md-nav__link">
+    differentiate_local()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pyrotation.Quaternion.identity" class="md-nav__link">
+    identity()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pyrotation.Quaternion.integrate_local" class="md-nav__link">
+    integrate_local()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pyrotation.Quaternion.interpolate" class="md-nav__link">
+    interpolate()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pyrotation.Quaternion.inverse" class="md-nav__link">
+    inverse()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pyrotation.Quaternion.multiply_quaternion" class="md-nav__link">
+    multiply_quaternion()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pyrotation.Quaternion.multiply_scaler" class="md-nav__link">
+    multiply_scaler()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pyrotation.Quaternion.norm" class="md-nav__link">
+    norm()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pyrotation.Quaternion.normalize" class="md-nav__link">
+    normalize()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pyrotation.Quaternion.quaternion_to_angle_axis" class="md-nav__link">
+    quaternion_to_angle_axis()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pyrotation.Quaternion.quaternion_to_rotation_matrix" class="md-nav__link">
+    quaternion_to_rotation_matrix()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pyrotation.Quaternion.rotate_a_point" class="md-nav__link">
+    rotate_a_point()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pyrotation.Quaternion.rotate_points" class="md-nav__link">
+    rotate_points()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pyrotation.Quaternion.rotation_matrix_to_quaternion" class="md-nav__link">
+    rotation_matrix_to_quaternion()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pyrotation.Quaternion.subtract_quaternion" class="md-nav__link">
+    subtract_quaternion()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pyrotation.Quaternion.to_angle_axis" class="md-nav__link">
+    to_angle_axis()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pyrotation.Quaternion.to_left_matrix" class="md-nav__link">
+    to_left_matrix()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pyrotation.Quaternion.to_right_matrix" class="md-nav__link">
+    to_right_matrix()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pyrotation.Quaternion.to_rotation_matrix" class="md-nav__link">
+    to_rotation_matrix()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pyrotation.alt_azimuth_to_axis" class="md-nav__link">
+    alt_azimuth_to_axis()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pyrotation.angle_axis_to_rotation_matrix" class="md-nav__link">
+    angle_axis_to_rotation_matrix()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pyrotation.axis_to_alt_azimuth" class="md-nav__link">
+    axis_to_alt_azimuth()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pyrotation.euler_zyx_to_rotation_matrix" class="md-nav__link">
+    euler_zyx_to_rotation_matrix()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pyrotation.normalize_rotation_matrix" class="md-nav__link">
+    normalize_rotation_matrix()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pyrotation.orthonormal_basis_from_two_vectors" class="md-nav__link">
+    orthonormal_basis_from_two_vectors()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pyrotation.rotate_a_point_by_angle_axis" class="md-nav__link">
+    rotate_a_point_by_angle_axis()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pyrotation.rotate_a_point_by_rotation_matrix" class="md-nav__link">
+    rotate_a_point_by_rotation_matrix()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pyrotation.rotate_points_by_angle_axis" class="md-nav__link">
+    rotate_points_by_angle_axis()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pyrotation.rotate_points_by_rotation_matrix" class="md-nav__link">
+    rotate_points_by_rotation_matrix()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pyrotation.rotation_matrix_from_orthonormal_basis" class="md-nav__link">
+    rotation_matrix_from_orthonormal_basis()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pyrotation.rotation_matrix_from_xy" class="md-nav__link">
+    rotation_matrix_from_xy()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pyrotation.rotation_matrix_from_yz" class="md-nav__link">
+    rotation_matrix_from_yz()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pyrotation.rotation_matrix_from_zx" class="md-nav__link">
+    rotation_matrix_from_zx()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pyrotation.rotation_matrix_to_angle_axis" class="md-nav__link">
+    rotation_matrix_to_angle_axis()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pyrotation.rotation_matrix_to_euler_angles_zyx" class="md-nav__link">
+    rotation_matrix_to_euler_angles_zyx()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pyrotation.skew_symmetric_matrix_to_vector" class="md-nav__link">
+    skew_symmetric_matrix_to_vector()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pyrotation.vector_to_skew_symmetric_matrix" class="md-nav__link">
+    vector_to_skew_symmetric_matrix()
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="pyrotation-module">pyrotation module</h1>
+<div class="doc doc-object doc-module">
+<h2 class="hidden-toc" id="pyrotation" style="visibility: hidden; position: absolute;">
+        </h2>
+<div class="doc doc-contents first">
+<p>This file is part of the pyrotation python module, which is designed to help
+teaching and learning the math of 3D rotation. This file contains the core
+class and functions of 3D rotation.</p>
+<p>Author: Duo Lu <a href="mailto:duolu.cs@gmail.com">duolu.cs@gmail.com</a></p>
+<p>Version: 0.1
+License: MIT</p>
+<p>Updated on Jan. 28, 2020, version 0.1</p>
+<p>Created on Mar 22, 2019, draft</p>
+<p>The MIT License</p>
+<p>Copyright 2017-2021 Duo Lu &lt;<a href="mailto:duolu.cs@gmail.com">duolu.cs@gmail.com</a>&gt;</p>
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy of 
+this software and associated documentation files (the "Software"), to deal in 
+the Software without restriction, including without limitation the rights to 
+use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies 
+of the Software, and to permit persons to whom the Software is furnished to do 
+so, subject to the following conditions:</p>
+<p>The above copyright notice and this permission notice shall be included in all 
+copies or substantial portions of the Software.</p>
+<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR 
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, 
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE 
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER 
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, 
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE 
+SOFTWARE.</p>
+<div class="doc doc-children">
+<div class="doc doc-object doc-class">
+<h2 class="doc doc-heading" id="pyrotation.Quaternion">
+
+        <code>Quaternion</code>
+
+
+
+      </h2>
+<div class="doc doc-contents ">
+<p>The class representing a quaternion in Hamiltonian convention.</p>
+<p>!!! note "The Quaternion object is designed to be immutable after construction."</p>
+<div class="doc doc-children">
+<div class="doc doc-object doc-method">
+<h3 class="doc doc-heading" id="pyrotation.Quaternion.__init__">
+
+<code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span></code>
+
+  <span class="doc doc-properties">
+      <small class="doc doc-property doc-property-special"><code>special</code></small>
+  </span>
+
+      </h3>
+<div class="doc doc-contents ">
+<p>Constructor, wchich expects the four components of a quaternion. </p>
+<details class="quote">
+          <summary>Source code in <code>code_fmkit/pyrotation.py</code></summary>
+          <div class="highlight">
+<pre><span></span><code><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">):</span>
+    <span class="sd">'''</span>
+<span class="sd">    Constructor, wchich expects the four components of a quaternion. </span>
+
+<span class="sd">    '''</span>
+
+    <span class="bp">self</span><span class="o">.</span><span class="n">w</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">w</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">z</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+</code></pre>
+</div>
+</details>
+</div>
+</div>
+<div class="doc doc-object doc-method">
+<h3 class="doc doc-heading" id="pyrotation.Quaternion.add_quaternion">
+
+<code class="highlight language-python"><span class="n">add_quaternion</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">q</span><span class="p">)</span></code>
+
+
+      </h3>
+<div class="doc doc-contents ">
+<p>Quaternion addition.</p>
+<p>NOTE: Do not use this when dealing with unit quaternion, since unit
+quaterion is not closed under addition.</p>
+<p>NOTE: A new quaternion object is returned as the result. This 
+quaternion is not changed.</p>
+<details class="quote">
+          <summary>Source code in <code>code_fmkit/pyrotation.py</code></summary>
+          <div class="highlight">
+<pre><span></span><code><span class="k">def</span> <span class="nf">add_quaternion</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">q</span><span class="p">):</span>
+    <span class="sd">'''</span>
+<span class="sd">    Quaternion addition.</span>
+
+<span class="sd">    NOTE: Do not use this when dealing with unit quaternion, since unit</span>
+<span class="sd">    quaterion is not closed under addition.</span>
+
+<span class="sd">    NOTE: A new quaternion object is returned as the result. This </span>
+<span class="sd">    quaternion is not changed.</span>
+
+<span class="sd">    '''</span>
+
+    <span class="n">w_add</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">w</span> <span class="o">+</span> <span class="n">q</span><span class="o">.</span><span class="n">w</span>
+    <span class="n">x_add</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="n">q</span><span class="o">.</span><span class="n">x</span>
+    <span class="n">y_add</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">+</span> <span class="n">q</span><span class="o">.</span><span class="n">y</span>
+    <span class="n">z_add</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">z</span> <span class="o">+</span> <span class="n">q</span><span class="o">.</span><span class="n">z</span>
+
+    <span class="k">return</span> <span class="n">Quaternion</span><span class="p">(</span><span class="n">w_add</span><span class="p">,</span> <span class="n">x_add</span><span class="p">,</span> <span class="n">y_add</span><span class="p">,</span> <span class="n">z_add</span><span class="p">)</span>
+</code></pre>
+</div>
+</details>
+</div>
+</div>
+<div class="doc doc-object doc-method">
+<h3 class="doc doc-heading" id="pyrotation.Quaternion.angle_axis_to_quaternion">
+
+<code class="highlight language-python"><span class="n">angle_axis_to_quaternion</span><span class="p">(</span><span class="n">u</span><span class="p">)</span></code>
+
+  <span class="doc doc-properties">
+      <small class="doc doc-property doc-property-staticmethod"><code>staticmethod</code></small>
+  </span>
+
+      </h3>
+<div class="doc doc-contents ">
+<p>Convert an angle-axis representation of a 3D rotation to a unit 
+quaternion. This is essentially the exponential map.</p>
+<p>This function is only for internal usage. Please use the following 
+instead when it is needed to do this conversion.</p>
+<div class="highlight">
+<pre><span></span><code>q = Quaternion.construct_from_angle_axis(u)
+</code></pre>
+</div>
+<p>See Joan Solà, "Quaternion Kinematics", section 2.4, eqation (101).</p>
+<details class="quote">
+          <summary>Source code in <code>code_fmkit/pyrotation.py</code></summary>
+          <div class="highlight">
+<pre><span></span><code><span class="nd">@staticmethod</span>
+<span class="k">def</span> <span class="nf">angle_axis_to_quaternion</span><span class="p">(</span><span class="n">u</span><span class="p">):</span>
+    <span class="sd">'''</span>
+<span class="sd">    Convert an angle-axis representation of a 3D rotation to a unit </span>
+<span class="sd">    quaternion. This is essentially the exponential map.</span>
+
+<span class="sd">    This function is only for internal usage. Please use the following </span>
+<span class="sd">    instead when it is needed to do this conversion.</span>
+
+<span class="sd">        q = Quaternion.construct_from_angle_axis(u)</span>
+
+<span class="sd">    See Joan Solà, "Quaternion Kinematics", section 2.4, eqation (101).</span>
+
+<span class="sd">    '''</span>
+
+    <span class="n">angle</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">u</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">angle</span> <span class="o">&lt;</span> <span class="n">EPSILON</span><span class="p">:</span>
+
+        <span class="n">w</span> <span class="o">=</span> <span class="mf">1.0</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="mf">0.0</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="mf">0.0</span>
+        <span class="n">z</span> <span class="o">=</span> <span class="mf">0.0</span>
+
+    <span class="k">else</span><span class="p">:</span>
+
+        <span class="n">u</span> <span class="o">=</span> <span class="n">u</span> <span class="o">/</span> <span class="n">angle</span>
+
+        <span class="n">w</span> <span class="o">=</span> <span class="n">cos</span><span class="p">(</span><span class="n">angle</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="n">sin</span><span class="p">(</span><span class="n">angle</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+
+        <span class="n">x</span> <span class="o">=</span> <span class="n">u</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">s</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="n">u</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">s</span>
+        <span class="n">z</span> <span class="o">=</span> <span class="n">u</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">*</span> <span class="n">s</span>
+
+    <span class="k">return</span> <span class="n">w</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span>
+</code></pre>
+</div>
+</details>
+</div>
+</div>
+<div class="doc doc-object doc-method">
+<h3 class="doc doc-heading" id="pyrotation.Quaternion.conjugate">
+
+<code class="highlight language-python"><span class="n">conjugate</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></code>
+
+
+      </h3>
+<div class="doc doc-contents ">
+<p>Return the conjugate of this quaternion.</p>
+<p>Notation: q* is q.conjugate()</p>
+<p>NOTE: A new quaternion object is returned as the result. This 
+quaternion is not changed.</p>
+<details class="quote">
+          <summary>Source code in <code>code_fmkit/pyrotation.py</code></summary>
+          <div class="highlight">
+<pre><span></span><code><span class="k">def</span> <span class="nf">conjugate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="sd">'''</span>
+<span class="sd">    Return the conjugate of this quaternion.</span>
+
+<span class="sd">    Notation: q* is q.conjugate()</span>
+
+<span class="sd">    NOTE: A new quaternion object is returned as the result. This </span>
+<span class="sd">    quaternion is not changed.</span>
+
+<span class="sd">    '''</span>
+
+    <span class="k">return</span> <span class="n">Quaternion</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">w</span><span class="p">,</span> <span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">z</span><span class="p">)</span>
+</code></pre>
+</div>
+</details>
+</div>
+</div>
+<div class="doc doc-object doc-method">
+<h3 class="doc doc-heading" id="pyrotation.Quaternion.construct_from_angle_axis">
+
+<code class="highlight language-python"><span class="n">construct_from_angle_axis</span><span class="p">(</span><span class="n">u</span><span class="p">)</span></code>
+
+  <span class="doc doc-properties">
+      <small class="doc doc-property doc-property-classmethod"><code>classmethod</code></small>
+  </span>
+
+      </h3>
+<div class="doc doc-contents ">
+<p>Construct a quaternion from angle-axis representation of a rotation.</p>
+<p>This is essentially the exponential map.</p>
+<details class="quote">
+          <summary>Source code in <code>code_fmkit/pyrotation.py</code></summary>
+          <div class="highlight">
+<pre><span></span><code><span class="nd">@classmethod</span>
+<span class="k">def</span> <span class="nf">construct_from_angle_axis</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">u</span><span class="p">):</span>
+    <span class="sd">'''</span>
+<span class="sd">    Construct a quaternion from angle-axis representation of a rotation.</span>
+
+<span class="sd">    This is essentially the exponential map.</span>
+
+<span class="sd">    '''</span>
+
+    <span class="n">w</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">angle_axis_to_quaternion</span><span class="p">(</span><span class="n">u</span><span class="p">)</span>
+    <span class="n">q</span> <span class="o">=</span> <span class="bp">cls</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span>
+    <span class="n">q</span> <span class="o">=</span> <span class="n">q</span><span class="o">.</span><span class="n">normalize</span><span class="p">()</span>
+
+    <span class="k">return</span> <span class="n">q</span>
+</code></pre>
+</div>
+</details>
+</div>
+</div>
+<div class="doc doc-object doc-method">
+<h3 class="doc doc-heading" id="pyrotation.Quaternion.construct_from_rotation_matrix">
+
+<code class="highlight language-python"><span class="n">construct_from_rotation_matrix</span><span class="p">(</span><span class="n">R</span><span class="p">)</span></code>
+
+  <span class="doc doc-properties">
+      <small class="doc doc-property doc-property-classmethod"><code>classmethod</code></small>
+  </span>
+
+      </h3>
+<div class="doc doc-contents ">
+<p>Construct a quaternion from a rotation matrix.</p>
+<details class="quote">
+          <summary>Source code in <code>code_fmkit/pyrotation.py</code></summary>
+          <div class="highlight">
+<pre><span></span><code><span class="nd">@classmethod</span>
+<span class="k">def</span> <span class="nf">construct_from_rotation_matrix</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">R</span><span class="p">):</span>
+    <span class="sd">'''</span>
+<span class="sd">    Construct a quaternion from a rotation matrix.</span>
+
+<span class="sd">    '''</span>
+
+    <span class="n">w</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">rotation_matrix_to_quaternion</span><span class="p">(</span><span class="n">R</span><span class="p">)</span>
+    <span class="n">q</span> <span class="o">=</span> <span class="bp">cls</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span>
+    <span class="c1">#q = q.normalize()</span>
+
+    <span class="k">return</span> <span class="n">q</span>
+</code></pre>
+</div>
+</details>
+</div>
+</div>
+<div class="doc doc-object doc-method">
+<h3 class="doc doc-heading" id="pyrotation.Quaternion.differentiate_local">
+
+<code class="highlight language-python"><span class="n">differentiate_local</span><span class="p">(</span><span class="n">q1</span><span class="p">,</span> <span class="n">q2</span><span class="p">,</span> <span class="n">timestep</span><span class="p">)</span></code>
+
+  <span class="doc doc-properties">
+      <small class="doc doc-property doc-property-classmethod"><code>classmethod</code></small>
+  </span>
+
+      </h3>
+<div class="doc doc-contents ">
+<p>Given two quaternions representing two poses q1 and q2, and assuming q2
+is derived by a rotation from the first psoe q1 during a timestep,
+this method returns the angular speed (i.e., omega) of the local
+reference frame respect to pose q1.</p>
+<p>This is exactly the inverse of integrate_local().</p>
+<details class="quote">
+          <summary>Source code in <code>code_fmkit/pyrotation.py</code></summary>
+          <div class="highlight">
+<pre><span></span><code><span class="nd">@classmethod</span>
+<span class="k">def</span> <span class="nf">differentiate_local</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">q1</span><span class="p">,</span> <span class="n">q2</span><span class="p">,</span> <span class="n">timestep</span><span class="p">):</span>
+    <span class="sd">'''</span>
+<span class="sd">    Given two quaternions representing two poses q1 and q2, and assuming q2</span>
+<span class="sd">    is derived by a rotation from the first psoe q1 during a timestep,</span>
+<span class="sd">    this method returns the angular speed (i.e., omega) of the local</span>
+<span class="sd">    reference frame respect to pose q1.</span>
+
+<span class="sd">    This is exactly the inverse of integrate_local().</span>
+<span class="sd">    '''</span>
+
+    <span class="n">delta_q</span> <span class="o">=</span> <span class="n">q1</span><span class="o">.</span><span class="n">conjugate</span><span class="p">()</span><span class="o">.</span><span class="n">multiply_quaternion</span><span class="p">(</span><span class="n">q2</span><span class="p">)</span>
+
+    <span class="n">u</span> <span class="o">=</span> <span class="n">delta_q</span><span class="o">.</span><span class="n">to_angle_axis</span><span class="p">()</span>
+
+    <span class="n">omega</span> <span class="o">=</span> <span class="n">u</span> <span class="o">/</span> <span class="n">timestep</span>
+
+    <span class="k">return</span> <span class="n">omega</span>
+</code></pre>
+</div>
+</details>
+</div>
+</div>
+<div class="doc doc-object doc-method">
+<h3 class="doc doc-heading" id="pyrotation.Quaternion.identity">
+
+<code class="highlight language-python"><span class="n">identity</span><span class="p">()</span></code>
+
+  <span class="doc doc-properties">
+      <small class="doc doc-property doc-property-classmethod"><code>classmethod</code></small>
+  </span>
+
+      </h3>
+<div class="doc doc-contents ">
+<p>Return the identity unit quaternion (1, 0, 0, 0).</p>
+<details class="quote">
+          <summary>Source code in <code>code_fmkit/pyrotation.py</code></summary>
+          <div class="highlight">
+<pre><span></span><code><span class="nd">@classmethod</span>
+<span class="k">def</span> <span class="nf">identity</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+    <span class="sd">'''</span>
+<span class="sd">    Return the identity unit quaternion (1, 0, 0, 0).</span>
+
+<span class="sd">    '''</span>
+
+    <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</code></pre>
+</div>
+</details>
+</div>
+</div>
+<div class="doc doc-object doc-method">
+<h3 class="doc doc-heading" id="pyrotation.Quaternion.integrate_local">
+
+<code class="highlight language-python"><span class="n">integrate_local</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="n">omega</span><span class="p">,</span> <span class="n">timestep</span><span class="p">)</span></code>
+
+  <span class="doc doc-properties">
+      <small class="doc doc-property doc-property-classmethod"><code>classmethod</code></small>
+  </span>
+
+      </h3>
+<div class="doc doc-contents ">
+<p>Integrate instantanious angular velocity (i.e., omega) to the
+quaternion q during the timestep. The result is also a quaternion.</p>
+<p>Note that the angular velocity is measured relative to the pose
+represented by this quaternion, i.e., consider the current pose
+is this quaternion and omega is measured by a gyroscope. Anguler
+velocity is in rad/sec, and timestep is in sec.</p>
+<p>Note that we use zeroth-order backward integration. </p>
+<p>See Joan Solà, "Quanternion Kinematics", section 4.6.</p>
+<details class="quote">
+          <summary>Source code in <code>code_fmkit/pyrotation.py</code></summary>
+          <div class="highlight">
+<pre><span></span><code><span class="nd">@classmethod</span>
+<span class="k">def</span> <span class="nf">integrate_local</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">q</span><span class="p">,</span> <span class="n">omega</span><span class="p">,</span> <span class="n">timestep</span><span class="p">):</span>
+    <span class="sd">'''</span>
+<span class="sd">    Integrate instantanious angular velocity (i.e., omega) to the</span>
+<span class="sd">    quaternion q during the timestep. The result is also a quaternion.</span>
+
+<span class="sd">    Note that the angular velocity is measured relative to the pose</span>
+<span class="sd">    represented by this quaternion, i.e., consider the current pose</span>
+<span class="sd">    is this quaternion and omega is measured by a gyroscope. Anguler</span>
+<span class="sd">    velocity is in rad/sec, and timestep is in sec.</span>
+
+<span class="sd">    Note that we use zeroth-order backward integration. </span>
+
+<span class="sd">    See Joan Solà, "Quanternion Kinematics", section 4.6.</span>
+<span class="sd">    '''</span>
+
+    <span class="n">u</span> <span class="o">=</span> <span class="n">omega</span> <span class="o">*</span> <span class="n">timestep</span>
+
+    <span class="n">delta_q</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">construct_from_angle_axis</span><span class="p">(</span><span class="n">u</span><span class="p">)</span>
+
+    <span class="n">p</span> <span class="o">=</span> <span class="n">q</span><span class="o">.</span><span class="n">multiply_quaternion</span><span class="p">(</span><span class="n">delta_q</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">p</span>
+</code></pre>
+</div>
+</details>
+</div>
+</div>
+<div class="doc doc-object doc-method">
+<h3 class="doc doc-heading" id="pyrotation.Quaternion.interpolate">
+
+<code class="highlight language-python"><span class="n">interpolate</span><span class="p">(</span><span class="n">q0</span><span class="p">,</span> <span class="n">q1</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span></code>
+
+  <span class="doc doc-properties">
+      <small class="doc doc-property doc-property-classmethod"><code>classmethod</code></small>
+  </span>
+
+      </h3>
+<div class="doc doc-contents ">
+<p>Spherical linear interpolation (SLERP) given two orientations
+represented by the quaternion q0 and q1, and interpolation parameter
+t in [0, 1], such that the orientation will continuously change from
+q0 to q1 by rotating along a fixed axis when t changes.</p>
+<p>See Joan Solà, "Quanternion Kinematics", section 2.7.</p>
+<details class="quote">
+          <summary>Source code in <code>code_fmkit/pyrotation.py</code></summary>
+          <div class="highlight">
+<pre><span></span><code><span class="nd">@classmethod</span>
+<span class="k">def</span> <span class="nf">interpolate</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">q0</span><span class="p">,</span> <span class="n">q1</span><span class="p">,</span> <span class="n">t</span><span class="p">):</span>
+    <span class="sd">'''</span>
+<span class="sd">    Spherical linear interpolation (SLERP) given two orientations</span>
+<span class="sd">    represented by the quaternion q0 and q1, and interpolation parameter</span>
+<span class="sd">    t in [0, 1], such that the orientation will continuously change from</span>
+<span class="sd">    q0 to q1 by rotating along a fixed axis when t changes.</span>
+
+<span class="sd">    See Joan Solà, "Quanternion Kinematics", section 2.7.</span>
+
+<span class="sd">    '''</span>
+
+    <span class="k">if</span> <span class="n">t</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+
+        <span class="k">return</span> <span class="n">q0</span>
+
+    <span class="k">elif</span> <span class="n">t</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+
+        <span class="k">return</span> <span class="n">q1</span>
+
+    <span class="k">elif</span> <span class="n">t</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">t</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
+
+
+        <span class="n">delta_q</span> <span class="o">=</span> <span class="n">q0</span><span class="o">.</span><span class="n">conjugate</span><span class="p">()</span><span class="o">.</span><span class="n">multiply_quaternion</span><span class="p">(</span><span class="n">q1</span><span class="p">)</span>
+
+        <span class="n">u</span> <span class="o">=</span> <span class="n">delta_q</span><span class="o">.</span><span class="n">to_angle_axis</span><span class="p">()</span>
+
+        <span class="n">qut</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">construct_from_angle_axis</span><span class="p">(</span><span class="n">u</span> <span class="o">*</span> <span class="n">t</span><span class="p">)</span>
+
+        <span class="n">qt</span> <span class="o">=</span> <span class="n">q0</span><span class="o">.</span><span class="n">multiply_quaternion</span><span class="p">(</span><span class="n">qut</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">qt</span>
+
+    <span class="k">else</span><span class="p">:</span>
+
+        <span class="n">err_str</span> <span class="o">=</span> <span class="s1">'Interpolation parameter t must be in [0, 1], '</span> \
+            <span class="s1">'while t = </span><span class="si">%f</span><span class="s1"> !'</span> <span class="o">%</span> <span class="n">t</span>
+
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">err_str</span><span class="p">)</span>
+</code></pre>
+</div>
+</details>
+</div>
+</div>
+<div class="doc doc-object doc-method">
+<h3 class="doc doc-heading" id="pyrotation.Quaternion.inverse">
+
+<code class="highlight language-python"><span class="n">inverse</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></code>
+
+
+      </h3>
+<div class="doc doc-contents ">
+<p>Return the inverse of this quaternion.</p>
+<p>Notation: q-1 is q.inverse()</p>
+<p>NOTE: A new quaternion object is returned as the result. This 
+quaternion is not changed.</p>
+<details class="quote">
+          <summary>Source code in <code>code_fmkit/pyrotation.py</code></summary>
+          <div class="highlight">
+<pre><span></span><code><span class="k">def</span> <span class="nf">inverse</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="sd">'''</span>
+<span class="sd">    Return the inverse of this quaternion.</span>
+
+<span class="sd">    Notation: q-1 is q.inverse()</span>
+
+<span class="sd">    NOTE: A new quaternion object is returned as the result. This </span>
+<span class="sd">    quaternion is not changed.</span>
+
+<span class="sd">    '''</span>
+
+    <span class="n">w</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">w</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span>
+    <span class="n">z</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">z</span>
+
+    <span class="n">a</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="n">w</span> <span class="o">*</span> <span class="n">w</span> <span class="o">+</span> <span class="n">x</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span> <span class="o">*</span> <span class="n">y</span> <span class="o">+</span> <span class="n">z</span> <span class="o">*</span> <span class="n">z</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">Quaternion</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">w</span> <span class="o">*</span> <span class="n">a</span><span class="p">,</span> <span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">*</span> <span class="n">a</span><span class="p">,</span> <span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">*</span> <span class="n">a</span><span class="p">,</span> <span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">z</span> <span class="o">*</span> <span class="n">a</span><span class="p">)</span>
+</code></pre>
+</div>
+</details>
+</div>
+</div>
+<div class="doc doc-object doc-method">
+<h3 class="doc doc-heading" id="pyrotation.Quaternion.multiply_quaternion">
+
+<code class="highlight language-python"><span class="n">multiply_quaternion</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">q</span><span class="p">)</span></code>
+
+
+      </h3>
+<div class="doc doc-contents ">
+<p>Quaternion multiplication.</p>
+<p>Notation: r = p x q is r = p.multiply_quaternion(q), 
+where "x" is quaternion multiplication.</p>
+<p>NOTE: A new quaternion object is returned as the result. This 
+quaternion is not changed.</p>
+<details class="quote">
+          <summary>Source code in <code>code_fmkit/pyrotation.py</code></summary>
+          <div class="highlight">
+<pre><span></span><code><span class="k">def</span> <span class="nf">multiply_quaternion</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">q</span><span class="p">):</span>
+    <span class="sd">'''</span>
+<span class="sd">    Quaternion multiplication.</span>
+
+<span class="sd">    Notation: r = p x q is r = p.multiply_quaternion(q), </span>
+<span class="sd">    where "x" is quaternion multiplication.</span>
+
+<span class="sd">    NOTE: A new quaternion object is returned as the result. This </span>
+<span class="sd">    quaternion is not changed.</span>
+
+<span class="sd">    '''</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="n">Quaternion</span><span class="p">):</span>
+
+        <span class="k">raise</span> <span class="s1">'Can not multiply non-quaternion! q=</span><span class="si">%s</span><span class="s1">'</span> <span class="o">%</span> <span class="nb">repr</span><span class="p">(</span><span class="n">q</span><span class="p">)</span>
+
+
+    <span class="n">pw</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">w</span>
+    <span class="n">px</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span>
+    <span class="n">py</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span>
+    <span class="n">pz</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">z</span>
+
+    <span class="n">qw</span> <span class="o">=</span> <span class="n">q</span><span class="o">.</span><span class="n">w</span>
+    <span class="n">qx</span> <span class="o">=</span> <span class="n">q</span><span class="o">.</span><span class="n">x</span>
+    <span class="n">qy</span> <span class="o">=</span> <span class="n">q</span><span class="o">.</span><span class="n">y</span>
+    <span class="n">qz</span> <span class="o">=</span> <span class="n">q</span><span class="o">.</span><span class="n">z</span>
+
+    <span class="n">w_mul</span> <span class="o">=</span> <span class="n">pw</span> <span class="o">*</span> <span class="n">qw</span> <span class="o">-</span> <span class="n">px</span> <span class="o">*</span> <span class="n">qx</span> <span class="o">-</span> <span class="n">py</span> <span class="o">*</span> <span class="n">qy</span> <span class="o">-</span> <span class="n">pz</span> <span class="o">*</span> <span class="n">qz</span>
+    <span class="n">x_mul</span> <span class="o">=</span> <span class="n">pw</span> <span class="o">*</span> <span class="n">qx</span> <span class="o">+</span> <span class="n">px</span> <span class="o">*</span> <span class="n">qw</span> <span class="o">+</span> <span class="n">py</span> <span class="o">*</span> <span class="n">qz</span> <span class="o">-</span> <span class="n">pz</span> <span class="o">*</span> <span class="n">qy</span>
+    <span class="n">y_mul</span> <span class="o">=</span> <span class="n">pw</span> <span class="o">*</span> <span class="n">qy</span> <span class="o">-</span> <span class="n">px</span> <span class="o">*</span> <span class="n">qz</span> <span class="o">+</span> <span class="n">py</span> <span class="o">*</span> <span class="n">qw</span> <span class="o">+</span> <span class="n">pz</span> <span class="o">*</span> <span class="n">qx</span>
+    <span class="n">z_mul</span> <span class="o">=</span> <span class="n">pw</span> <span class="o">*</span> <span class="n">qz</span> <span class="o">+</span> <span class="n">px</span> <span class="o">*</span> <span class="n">qy</span> <span class="o">-</span> <span class="n">py</span> <span class="o">*</span> <span class="n">qx</span> <span class="o">+</span> <span class="n">pz</span> <span class="o">*</span> <span class="n">qw</span>
+
+    <span class="k">return</span> <span class="n">Quaternion</span><span class="p">(</span><span class="n">w_mul</span><span class="p">,</span> <span class="n">x_mul</span><span class="p">,</span> <span class="n">y_mul</span><span class="p">,</span> <span class="n">z_mul</span><span class="p">)</span>
+</code></pre>
+</div>
+</details>
+</div>
+</div>
+<div class="doc doc-object doc-method">
+<h3 class="doc doc-heading" id="pyrotation.Quaternion.multiply_scaler">
+
+<code class="highlight language-python"><span class="n">multiply_scaler</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span></code>
+
+
+      </h3>
+<div class="doc doc-contents ">
+<p>Multiply each component with a scalar.</p>
+<p>NOTE: Do not use this when dealing with unit quaternion, since unit
+quaterion is not closed under scaling.</p>
+<p>NOTE: A new quaternion object is returned as the result. This 
+quaternion is not changed.</p>
+<details class="quote">
+          <summary>Source code in <code>code_fmkit/pyrotation.py</code></summary>
+          <div class="highlight">
+<pre><span></span><code><span class="k">def</span> <span class="nf">multiply_scaler</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">s</span><span class="p">):</span>
+    <span class="sd">'''</span>
+<span class="sd">    Multiply each component with a scalar.</span>
+
+<span class="sd">    NOTE: Do not use this when dealing with unit quaternion, since unit</span>
+<span class="sd">    quaterion is not closed under scaling.</span>
+
+<span class="sd">    NOTE: A new quaternion object is returned as the result. This </span>
+<span class="sd">    quaternion is not changed.</span>
+
+<span class="sd">    '''</span>
+
+    <span class="k">return</span> <span class="n">Quaternion</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">w</span> <span class="o">*</span> <span class="n">s</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">*</span> <span class="n">s</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">*</span> <span class="n">s</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">z</span> <span class="o">*</span> <span class="n">s</span><span class="p">)</span>
+</code></pre>
+</div>
+</details>
+</div>
+</div>
+<div class="doc doc-object doc-method">
+<h3 class="doc doc-heading" id="pyrotation.Quaternion.norm">
+
+<code class="highlight language-python"><span class="n">norm</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></code>
+
+
+      </h3>
+<div class="doc doc-contents ">
+<p>Return the norm of this quaternion.</p>
+<p>Notation: |q| is q.norm()</p>
+<details class="quote">
+          <summary>Source code in <code>code_fmkit/pyrotation.py</code></summary>
+          <div class="highlight">
+<pre><span></span><code><span class="k">def</span> <span class="nf">norm</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="sd">'''</span>
+<span class="sd">    Return the norm of this quaternion.</span>
+
+<span class="sd">    Notation: |q| is q.norm()</span>
+
+<span class="sd">    '''</span>
+    <span class="n">w</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">w</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span>
+    <span class="n">z</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">z</span>
+
+    <span class="k">return</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">w</span> <span class="o">*</span> <span class="n">w</span> <span class="o">+</span> <span class="n">x</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span> <span class="o">*</span> <span class="n">y</span> <span class="o">+</span> <span class="n">z</span> <span class="o">*</span> <span class="n">z</span><span class="p">)</span>
+</code></pre>
+</div>
+</details>
+</div>
+</div>
+<div class="doc doc-object doc-method">
+<h3 class="doc doc-heading" id="pyrotation.Quaternion.normalize">
+
+<code class="highlight language-python"><span class="n">normalize</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></code>
+
+
+      </h3>
+<div class="doc doc-contents ">
+<p>Return a normalized unit quaternion based on this quaternion.</p>
+<p>NOTE: A new quaternion object is returned as the result. This 
+quaternion is not changed.</p>
+<details class="quote">
+          <summary>Source code in <code>code_fmkit/pyrotation.py</code></summary>
+          <div class="highlight">
+<pre><span></span><code><span class="k">def</span> <span class="nf">normalize</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="sd">'''</span>
+<span class="sd">    Return a normalized unit quaternion based on this quaternion.</span>
+
+<span class="sd">    NOTE: A new quaternion object is returned as the result. This </span>
+<span class="sd">    quaternion is not changed.</span>
+
+<span class="sd">    '''</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">norm</span><span class="p">()</span>
+
+    <span class="n">w</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">w</span> <span class="o">/</span> <span class="n">n</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">/</span> <span class="n">n</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">/</span> <span class="n">n</span>
+    <span class="n">z</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">z</span> <span class="o">/</span> <span class="n">n</span>
+
+    <span class="k">return</span> <span class="n">Quaternion</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span>
+</code></pre>
+</div>
+</details>
+</div>
+</div>
+<div class="doc doc-object doc-method">
+<h3 class="doc doc-heading" id="pyrotation.Quaternion.quaternion_to_angle_axis">
+
+<code class="highlight language-python"><span class="n">quaternion_to_angle_axis</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span></code>
+
+  <span class="doc doc-properties">
+      <small class="doc doc-property doc-property-staticmethod"><code>staticmethod</code></small>
+  </span>
+
+      </h3>
+<div class="doc doc-contents ">
+<p>Convert a unit quaternion representation of a 3D rotation to 
+angle-axis representation. This is essentially the logrithmic map.</p>
+<p>This function is only for internal usage. Please use the following 
+instead when it is needed to do this conversion.</p>
+<div class="highlight">
+<pre><span></span><code>u = q.to_angle_axis(u)
+</code></pre>
+</div>
+<details class="quote">
+          <summary>Source code in <code>code_fmkit/pyrotation.py</code></summary>
+          <div class="highlight">
+<pre><span></span><code><span class="nd">@staticmethod</span>
+<span class="k">def</span> <span class="nf">quaternion_to_angle_axis</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">):</span>
+    <span class="sd">'''</span>
+<span class="sd">    Convert a unit quaternion representation of a 3D rotation to </span>
+<span class="sd">    angle-axis representation. This is essentially the logrithmic map.</span>
+
+<span class="sd">    This function is only for internal usage. Please use the following </span>
+<span class="sd">    instead when it is needed to do this conversion.</span>
+
+<span class="sd">        u = q.to_angle_axis(u)</span>
+
+<span class="sd">    '''</span>
+
+    <span class="n">v_norm</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">x</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span> <span class="o">*</span> <span class="n">y</span> <span class="o">+</span> <span class="n">z</span> <span class="o">*</span> <span class="n">z</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">v_norm</span> <span class="o">&lt;</span> <span class="n">EPSILON</span><span class="p">:</span>
+
+        <span class="n">ux</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">uy</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">uz</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="k">else</span><span class="p">:</span>
+
+        <span class="n">angle</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">atan2</span><span class="p">(</span><span class="n">v_norm</span><span class="p">,</span> <span class="n">w</span><span class="p">)</span>
+
+        <span class="n">ux</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="p">(</span><span class="n">angle</span> <span class="o">/</span> <span class="n">v_norm</span><span class="p">)</span>
+        <span class="n">uy</span> <span class="o">=</span> <span class="n">y</span> <span class="o">*</span> <span class="p">(</span><span class="n">angle</span> <span class="o">/</span> <span class="n">v_norm</span><span class="p">)</span>
+        <span class="n">uz</span> <span class="o">=</span> <span class="n">z</span> <span class="o">*</span> <span class="p">(</span><span class="n">angle</span> <span class="o">/</span> <span class="n">v_norm</span><span class="p">)</span>
+
+    <span class="n">u</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">((</span><span class="n">ux</span><span class="p">,</span> <span class="n">uy</span><span class="p">,</span> <span class="n">uz</span><span class="p">))</span>
+
+    <span class="k">return</span> <span class="n">u</span>
+</code></pre>
+</div>
+</details>
+</div>
+</div>
+<div class="doc doc-object doc-method">
+<h3 class="doc doc-heading" id="pyrotation.Quaternion.quaternion_to_rotation_matrix">
+
+<code class="highlight language-python"><span class="n">quaternion_to_rotation_matrix</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span></code>
+
+  <span class="doc doc-properties">
+      <small class="doc doc-property doc-property-staticmethod"><code>staticmethod</code></small>
+  </span>
+
+      </h3>
+<div class="doc doc-contents ">
+<p>Convert a unit quaternion to a rotation matrix.</p>
+<p>This function is only for internal usage. Please use the following 
+instead when it is needed to do this conversion.</p>
+<div class="highlight">
+<pre><span></span><code>R = q.to_rotation_matrix()
+</code></pre>
+</div>
+<details class="quote">
+          <summary>Source code in <code>code_fmkit/pyrotation.py</code></summary>
+          <div class="highlight">
+<pre><span></span><code><span class="nd">@staticmethod</span>
+<span class="k">def</span> <span class="nf">quaternion_to_rotation_matrix</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">):</span>
+    <span class="sd">'''</span>
+<span class="sd">    Convert a unit quaternion to a rotation matrix.</span>
+
+<span class="sd">    This function is only for internal usage. Please use the following </span>
+<span class="sd">    instead when it is needed to do this conversion.</span>
+
+<span class="sd">        R = q.to_rotation_matrix()</span>
+
+<span class="sd">    '''</span>
+
+    <span class="n">w2</span> <span class="o">=</span> <span class="n">w</span> <span class="o">*</span> <span class="n">w</span>
+    <span class="n">x2</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="n">x</span>
+    <span class="n">y2</span> <span class="o">=</span> <span class="n">y</span> <span class="o">*</span> <span class="n">y</span>
+    <span class="n">z2</span> <span class="o">=</span> <span class="n">z</span> <span class="o">*</span> <span class="n">z</span>
+
+    <span class="c1"># Check the norm of the quaternion! It must be a unit quaternion!</span>
+    <span class="k">assert</span> <span class="n">fabs</span><span class="p">(</span><span class="n">w2</span> <span class="o">+</span> <span class="n">x2</span> <span class="o">+</span> <span class="n">y2</span> <span class="o">+</span> <span class="n">z2</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mf">1e-6</span>
+
+    <span class="n">wx</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">w</span> <span class="o">*</span> <span class="n">x</span>
+    <span class="n">wy</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">w</span> <span class="o">*</span> <span class="n">y</span>
+    <span class="n">wz</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">w</span> <span class="o">*</span> <span class="n">z</span>
+
+    <span class="n">xy</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">x</span> <span class="o">*</span> <span class="n">y</span>
+    <span class="n">xz</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">x</span> <span class="o">*</span> <span class="n">z</span>
+    <span class="n">yz</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">y</span> <span class="o">*</span> <span class="n">z</span>
+
+    <span class="n">R</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">((</span>
+        <span class="p">(</span> <span class="n">w2</span> <span class="o">+</span> <span class="n">x2</span> <span class="o">-</span> <span class="n">y2</span> <span class="o">-</span> <span class="n">z2</span><span class="p">,</span>   <span class="n">xy</span> <span class="o">-</span> <span class="n">wz</span><span class="p">,</span>             <span class="n">xz</span> <span class="o">+</span> <span class="n">wy</span>           <span class="p">),</span>
+        <span class="p">(</span> <span class="n">xy</span> <span class="o">+</span> <span class="n">wz</span><span class="p">,</span>             <span class="n">w2</span> <span class="o">-</span> <span class="n">x2</span> <span class="o">+</span> <span class="n">y2</span> <span class="o">-</span> <span class="n">z2</span><span class="p">,</span>   <span class="n">yz</span> <span class="o">-</span> <span class="n">wx</span>           <span class="p">),</span>
+        <span class="p">(</span> <span class="n">xz</span> <span class="o">-</span> <span class="n">wy</span><span class="p">,</span>             <span class="n">yz</span> <span class="o">+</span> <span class="n">wx</span><span class="p">,</span>             <span class="n">w2</span> <span class="o">-</span> <span class="n">x2</span> <span class="o">-</span> <span class="n">y2</span> <span class="o">+</span> <span class="n">z2</span> <span class="p">)</span>
+        <span class="p">))</span>
+
+    <span class="k">return</span> <span class="n">R</span>
+</code></pre>
+</div>
+</details>
+</div>
+</div>
+<div class="doc doc-object doc-method">
+<h3 class="doc doc-heading" id="pyrotation.Quaternion.rotate_a_point">
+
+<code class="highlight language-python"><span class="n">rotate_a_point</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">p</span><span class="p">)</span></code>
+
+
+      </h3>
+<div class="doc doc-contents ">
+<p>Rotate a single 3D point based on this quaternion. The input point is
+a numpy array of three element. </p>
+<p>Internally, it is converted to a vector v = (0, x, y, z) and use the 
+following equation.</p>
+<p>v' = q x v x q*</p>
+<p>where x is quaternion multiplication.</p>
+<p>The implementation uses the following matrix-based method,</p>
+<p>q x v x p = (q x v) x p = p_R * q_L * v
+          = q x (v x p) = q_L * p_R * v</p>
+<details class="quote">
+          <summary>Source code in <code>code_fmkit/pyrotation.py</code></summary>
+          <div class="highlight">
+<pre><span></span><code><span class="k">def</span> <span class="nf">rotate_a_point</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">p</span><span class="p">):</span>
+    <span class="sd">'''</span>
+<span class="sd">    Rotate a single 3D point based on this quaternion. The input point is</span>
+<span class="sd">    a numpy array of three element. </span>
+
+<span class="sd">    Internally, it is converted to a vector v = (0, x, y, z) and use the </span>
+<span class="sd">    following equation.</span>
+
+<span class="sd">    v' = q x v x q*</span>
+
+<span class="sd">    where x is quaternion multiplication.</span>
+
+<span class="sd">    The implementation uses the following matrix-based method,</span>
+
+<span class="sd">    q x v x p = (q x v) x p = p_R * q_L * v</span>
+<span class="sd">              = q x (v x p) = q_L * p_R * v</span>
+
+<span class="sd">    '''</span>
+
+    <span class="n">q_L</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">to_left_matrix</span><span class="p">()</span>
+    <span class="n">qc_R</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">conjugate</span><span class="p">()</span><span class="o">.</span><span class="n">to_right_matrix</span><span class="p">()</span>
+
+    <span class="n">v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">p</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">p</span><span class="p">[</span><span class="mi">2</span><span class="p">]))</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+
+    <span class="n">r</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">qc_R</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">q_L</span><span class="p">,</span> <span class="n">v</span><span class="p">))</span>
+
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">((</span><span class="n">r</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">r</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">r</span><span class="p">[</span><span class="mi">3</span><span class="p">]))</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</code></pre>
+</div>
+</details>
+</div>
+</div>
+<div class="doc doc-object doc-method">
+<h3 class="doc doc-heading" id="pyrotation.Quaternion.rotate_points">
+
+<code class="highlight language-python"><span class="n">rotate_points</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ps</span><span class="p">)</span></code>
+
+
+      </h3>
+<div class="doc doc-contents ">
+<p>Rotate an array of points. The input points are a numpy 3-by-n matrix, 
+where each point is a column.</p>
+<details class="quote">
+          <summary>Source code in <code>code_fmkit/pyrotation.py</code></summary>
+          <div class="highlight">
+<pre><span></span><code><span class="k">def</span> <span class="nf">rotate_points</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ps</span><span class="p">):</span>
+    <span class="sd">'''</span>
+<span class="sd">    Rotate an array of points. The input points are a numpy 3-by-n matrix, </span>
+<span class="sd">    where each point is a column.</span>
+
+<span class="sd">    '''</span>
+
+    <span class="n">q_L</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">to_left_matrix</span><span class="p">()</span>
+    <span class="n">qc_R</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">conjugate</span><span class="p">()</span><span class="o">.</span><span class="n">to_right_matrix</span><span class="p">()</span>
+
+    <span class="n">vs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">4</span><span class="p">,</span> <span class="n">ps</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span> <span class="n">ps</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
+    <span class="n">vs</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">4</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">ps</span>
+    <span class="n">rs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">qc_R</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">q_L</span><span class="p">,</span> <span class="n">vs</span><span class="p">))</span>
+
+    <span class="k">return</span> <span class="n">rs</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">4</span><span class="p">,</span> <span class="p">:]</span>
+</code></pre>
+</div>
+</details>
+</div>
+</div>
+<div class="doc doc-object doc-method">
+<h3 class="doc doc-heading" id="pyrotation.Quaternion.rotation_matrix_to_quaternion">
+
+<code class="highlight language-python"><span class="n">rotation_matrix_to_quaternion</span><span class="p">(</span><span class="n">R</span><span class="p">)</span></code>
+
+  <span class="doc doc-properties">
+      <small class="doc doc-property doc-property-staticmethod"><code>staticmethod</code></small>
+  </span>
+
+      </h3>
+<div class="doc doc-contents ">
+<p>Convert a rotation matrix to a unit quaternion.</p>
+<p>This uses the Shepperd’s method for numerical stabilty.</p>
+<p>This function is only for internal usage. Please use the following 
+instead when it is needed to do this conversion.</p>
+<div class="highlight">
+<pre><span></span><code>q = Quaternion.construct_from_rotation_matrix(R)
+</code></pre>
+</div>
+<details class="quote">
+          <summary>Source code in <code>code_fmkit/pyrotation.py</code></summary>
+          <div class="highlight">
+<pre><span></span><code><span class="nd">@staticmethod</span>
+<span class="k">def</span> <span class="nf">rotation_matrix_to_quaternion</span><span class="p">(</span><span class="n">R</span><span class="p">):</span>
+    <span class="sd">'''</span>
+<span class="sd">    Convert a rotation matrix to a unit quaternion.</span>
+
+<span class="sd">    This uses the Shepperd’s method for numerical stabilty.</span>
+
+<span class="sd">    This function is only for internal usage. Please use the following </span>
+<span class="sd">    instead when it is needed to do this conversion.</span>
+
+<span class="sd">        q = Quaternion.construct_from_rotation_matrix(R)</span>
+
+<span class="sd">    '''</span>
+
+    <span class="c1"># The rotation matrix must be orthonormal</span>
+
+    <span class="k">assert</span> <span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">R</span><span class="p">,</span> <span class="n">R</span><span class="o">.</span><span class="n">transpose</span><span class="p">()),</span> <span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span> 
+                       <span class="n">atol</span><span class="o">=</span><span class="n">EPSILON</span><span class="p">)</span>
+
+    <span class="c1"># Check the determinant of R! It must be 1.</span>
+    <span class="k">assert</span> <span class="n">math</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">det</span><span class="p">(</span><span class="n">R</span><span class="p">),</span> <span class="mi">1</span><span class="p">,</span> <span class="n">abs_tol</span><span class="o">=</span><span class="n">EPSILON</span><span class="p">)</span>
+
+    <span class="n">w2</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">R</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">R</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">R</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
+    <span class="n">x2</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">R</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">R</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">R</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
+    <span class="n">y2</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">R</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">R</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">R</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
+    <span class="n">z2</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">R</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">R</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">R</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
+
+    <span class="n">yz</span> <span class="o">=</span> <span class="p">(</span><span class="n">R</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="n">R</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+    <span class="n">xz</span> <span class="o">=</span> <span class="p">(</span><span class="n">R</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">R</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
+    <span class="n">xy</span> <span class="o">=</span> <span class="p">(</span><span class="n">R</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">R</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+
+    <span class="n">wx</span> <span class="o">=</span> <span class="p">(</span><span class="n">R</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">R</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
+    <span class="n">wy</span> <span class="o">=</span> <span class="p">(</span><span class="n">R</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">-</span> <span class="n">R</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+    <span class="n">wz</span> <span class="o">=</span> <span class="p">(</span><span class="n">R</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">R</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+
+
+    <span class="k">if</span> <span class="n">R</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+
+        <span class="k">if</span> <span class="n">R</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">R</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]:</span>
+
+            <span class="n">x</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">x2</span><span class="p">)</span>
+            <span class="n">w</span> <span class="o">=</span> <span class="n">wx</span> <span class="o">/</span> <span class="n">x</span>
+            <span class="n">y</span> <span class="o">=</span> <span class="n">xy</span> <span class="o">/</span> <span class="n">x</span>
+            <span class="n">z</span> <span class="o">=</span> <span class="n">xz</span> <span class="o">/</span> <span class="n">x</span>
+
+        <span class="k">else</span><span class="p">:</span>
+
+            <span class="n">y</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">y2</span><span class="p">)</span>
+            <span class="n">w</span> <span class="o">=</span> <span class="n">wy</span> <span class="o">/</span> <span class="n">y</span>
+            <span class="n">x</span> <span class="o">=</span> <span class="n">xy</span> <span class="o">/</span> <span class="n">y</span>
+            <span class="n">z</span> <span class="o">=</span> <span class="n">yz</span> <span class="o">/</span> <span class="n">y</span>
+
+    <span class="k">else</span><span class="p">:</span>
+
+        <span class="k">if</span> <span class="n">R</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">&lt;</span> <span class="o">-</span><span class="n">R</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]:</span>
+
+            <span class="n">z</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">z2</span><span class="p">)</span>
+            <span class="n">w</span> <span class="o">=</span> <span class="n">wz</span> <span class="o">/</span> <span class="n">z</span>
+            <span class="n">x</span> <span class="o">=</span> <span class="n">xz</span> <span class="o">/</span> <span class="n">z</span>
+            <span class="n">y</span> <span class="o">=</span> <span class="n">yz</span> <span class="o">/</span> <span class="n">z</span>
+
+        <span class="k">else</span><span class="p">:</span>
+
+            <span class="n">w</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">w2</span><span class="p">)</span>
+            <span class="n">x</span> <span class="o">=</span> <span class="n">wx</span> <span class="o">/</span> <span class="n">w</span>
+            <span class="n">y</span> <span class="o">=</span> <span class="n">wy</span> <span class="o">/</span> <span class="n">w</span>
+            <span class="n">z</span> <span class="o">=</span> <span class="n">wz</span> <span class="o">/</span> <span class="n">w</span>
+
+    <span class="n">w</span> <span class="o">=</span> <span class="n">w</span> <span class="o">*</span> <span class="mf">0.5</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="mf">0.5</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">y</span> <span class="o">*</span> <span class="mf">0.5</span>
+    <span class="n">z</span> <span class="o">=</span> <span class="n">z</span> <span class="o">*</span> <span class="mf">0.5</span>
+
+    <span class="k">return</span> <span class="n">w</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span>
+</code></pre>
+</div>
+</details>
+</div>
+</div>
+<div class="doc doc-object doc-method">
+<h3 class="doc doc-heading" id="pyrotation.Quaternion.subtract_quaternion">
+
+<code class="highlight language-python"><span class="n">subtract_quaternion</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">q</span><span class="p">)</span></code>
+
+
+      </h3>
+<div class="doc doc-contents ">
+<p>Quaternion subtraction.</p>
+<p>NOTE: Do not use this when dealing with unit quaternion, since unit
+quaterion is not closed under addition.</p>
+<p>NOTE: A new quaternion object is returned as the result. This 
+quaternion is not changed.</p>
+<details class="quote">
+          <summary>Source code in <code>code_fmkit/pyrotation.py</code></summary>
+          <div class="highlight">
+<pre><span></span><code><span class="k">def</span> <span class="nf">subtract_quaternion</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">q</span><span class="p">):</span>
+    <span class="sd">'''</span>
+<span class="sd">    Quaternion subtraction.</span>
+
+<span class="sd">    NOTE: Do not use this when dealing with unit quaternion, since unit</span>
+<span class="sd">    quaterion is not closed under addition.</span>
+
+<span class="sd">    NOTE: A new quaternion object is returned as the result. This </span>
+<span class="sd">    quaternion is not changed.</span>
+
+<span class="sd">    '''</span>
+
+    <span class="n">w_sub</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">w</span> <span class="o">-</span> <span class="n">q</span><span class="o">.</span><span class="n">w</span>
+    <span class="n">x_sub</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">-</span> <span class="n">q</span><span class="o">.</span><span class="n">x</span>
+    <span class="n">y_sub</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">-</span> <span class="n">q</span><span class="o">.</span><span class="n">y</span>
+    <span class="n">z_sub</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">z</span> <span class="o">-</span> <span class="n">q</span><span class="o">.</span><span class="n">z</span>
+
+    <span class="k">return</span> <span class="n">Quaternion</span><span class="p">(</span><span class="n">w_sub</span><span class="p">,</span> <span class="n">x_sub</span><span class="p">,</span> <span class="n">y_sub</span><span class="p">,</span> <span class="n">z_sub</span><span class="p">)</span>
+</code></pre>
+</div>
+</details>
+</div>
+</div>
+<div class="doc doc-object doc-method">
+<h3 class="doc doc-heading" id="pyrotation.Quaternion.to_angle_axis">
+
+<code class="highlight language-python"><span class="n">to_angle_axis</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></code>
+
+
+      </h3>
+<div class="doc doc-contents ">
+<p>Convert this quaternion to angle-axis representation of rotation.</p>
+<p>This is the reverse of construct_from_angle_axis()</p>
+<p>This is essentially the logarithmic map.</p>
+<p>See Joan Solà, "Quaternion Kinematics", section 2.4, eqation (106).</p>
+<p>CAUTION: This must be a unit quaternion!</p>
+<details class="quote">
+          <summary>Source code in <code>code_fmkit/pyrotation.py</code></summary>
+          <div class="highlight">
+<pre><span></span><code><span class="k">def</span> <span class="nf">to_angle_axis</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="sd">'''</span>
+<span class="sd">    Convert this quaternion to angle-axis representation of rotation.</span>
+
+<span class="sd">    This is the reverse of construct_from_angle_axis()</span>
+
+<span class="sd">    This is essentially the logarithmic map.</span>
+
+<span class="sd">    See Joan Solà, "Quaternion Kinematics", section 2.4, eqation (106).</span>
+
+<span class="sd">    CAUTION: This must be a unit quaternion!</span>
+
+<span class="sd">    '''</span>
+
+    <span class="k">assert</span> <span class="p">(</span><span class="n">fabs</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">norm</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">EPSILON</span><span class="p">)</span>
+
+    <span class="n">w</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">w</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span>
+    <span class="n">z</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">z</span>
+
+    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">quaternion_to_angle_axis</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span>
+</code></pre>
+</div>
+</details>
+</div>
+</div>
+<div class="doc doc-object doc-method">
+<h3 class="doc doc-heading" id="pyrotation.Quaternion.to_left_matrix">
+
+<code class="highlight language-python"><span class="n">to_left_matrix</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></code>
+
+
+      </h3>
+<div class="doc doc-contents ">
+<p>Return the left matrix of this quaternion.</p>
+<p>Notation: p_L = p.to_left_matrix()</p>
+<p>p x q = p_L * q, where "*" is matrix multiplication, and q can be
+considered as a 4 by 1 matrix.</p>
+<details class="quote">
+          <summary>Source code in <code>code_fmkit/pyrotation.py</code></summary>
+          <div class="highlight">
+<pre><span></span><code><span class="k">def</span> <span class="nf">to_left_matrix</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="sd">'''</span>
+<span class="sd">    Return the left matrix of this quaternion.</span>
+
+<span class="sd">    Notation: p_L = p.to_left_matrix()</span>
+
+<span class="sd">    p x q = p_L * q, where "*" is matrix multiplication, and q can be</span>
+<span class="sd">    considered as a 4 by 1 matrix.</span>
+
+<span class="sd">    '''</span>
+    <span class="n">w</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">w</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span>
+    <span class="n">z</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">z</span>
+
+    <span class="n">M</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">((</span>
+        <span class="p">(</span> <span class="n">w</span><span class="p">,</span> <span class="o">-</span><span class="n">x</span><span class="p">,</span> <span class="o">-</span><span class="n">y</span><span class="p">,</span> <span class="o">-</span><span class="n">z</span> <span class="p">),</span>
+        <span class="p">(</span> <span class="n">x</span><span class="p">,</span>  <span class="n">w</span><span class="p">,</span> <span class="o">-</span><span class="n">z</span><span class="p">,</span>  <span class="n">y</span> <span class="p">),</span>
+        <span class="p">(</span> <span class="n">y</span><span class="p">,</span>  <span class="n">z</span><span class="p">,</span>  <span class="n">w</span><span class="p">,</span> <span class="o">-</span><span class="n">x</span> <span class="p">),</span>
+        <span class="p">(</span> <span class="n">z</span><span class="p">,</span> <span class="o">-</span><span class="n">y</span><span class="p">,</span>  <span class="n">x</span><span class="p">,</span>  <span class="n">w</span> <span class="p">)</span>
+        <span class="p">))</span>
+
+    <span class="k">return</span> <span class="n">M</span>
+</code></pre>
+</div>
+</details>
+</div>
+</div>
+<div class="doc doc-object doc-method">
+<h3 class="doc doc-heading" id="pyrotation.Quaternion.to_right_matrix">
+
+<code class="highlight language-python"><span class="n">to_right_matrix</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></code>
+
+
+      </h3>
+<div class="doc doc-contents ">
+<p>Return the right matrix of this quaternion.</p>
+<p>Notation: q_R is q.to_right_matrix()</p>
+<p>p x q = q_R * p, where "*" is matrix multiplication, and q is
+considered as a 4 by 1 matrix.</p>
+<details class="quote">
+          <summary>Source code in <code>code_fmkit/pyrotation.py</code></summary>
+          <div class="highlight">
+<pre><span></span><code><span class="k">def</span> <span class="nf">to_right_matrix</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="sd">'''</span>
+<span class="sd">    Return the right matrix of this quaternion.</span>
+
+<span class="sd">    Notation: q_R is q.to_right_matrix()</span>
+
+<span class="sd">    p x q = q_R * p, where "*" is matrix multiplication, and q is</span>
+<span class="sd">    considered as a 4 by 1 matrix.</span>
+
+<span class="sd">    '''</span>
+
+    <span class="n">w</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">w</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span>
+    <span class="n">z</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">z</span>
+
+    <span class="n">M</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">((</span>
+        <span class="p">(</span> <span class="n">w</span><span class="p">,</span> <span class="o">-</span><span class="n">x</span><span class="p">,</span> <span class="o">-</span><span class="n">y</span><span class="p">,</span> <span class="o">-</span><span class="n">z</span> <span class="p">),</span>
+        <span class="p">(</span> <span class="n">x</span><span class="p">,</span>  <span class="n">w</span><span class="p">,</span>  <span class="n">z</span><span class="p">,</span> <span class="o">-</span><span class="n">y</span> <span class="p">),</span>
+        <span class="p">(</span> <span class="n">y</span><span class="p">,</span> <span class="o">-</span><span class="n">z</span><span class="p">,</span>  <span class="n">w</span><span class="p">,</span>  <span class="n">x</span> <span class="p">),</span>
+        <span class="p">(</span> <span class="n">z</span><span class="p">,</span>  <span class="n">y</span><span class="p">,</span> <span class="o">-</span><span class="n">x</span><span class="p">,</span>  <span class="n">w</span> <span class="p">)</span>
+        <span class="p">))</span>
+
+    <span class="k">return</span> <span class="n">M</span>
+</code></pre>
+</div>
+</details>
+</div>
+</div>
+<div class="doc doc-object doc-method">
+<h3 class="doc doc-heading" id="pyrotation.Quaternion.to_rotation_matrix">
+
+<code class="highlight language-python"><span class="n">to_rotation_matrix</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></code>
+
+
+      </h3>
+<div class="doc doc-contents ">
+<p>Convert this unit quaternion to a rotation matrix.</p>
+<p>CAUTION: This must be a unit quaternion!</p>
+<details class="quote">
+          <summary>Source code in <code>code_fmkit/pyrotation.py</code></summary>
+          <div class="highlight">
+<pre><span></span><code><span class="k">def</span> <span class="nf">to_rotation_matrix</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="sd">'''</span>
+<span class="sd">    Convert this unit quaternion to a rotation matrix.</span>
+
+<span class="sd">    CAUTION: This must be a unit quaternion!</span>
+
+<span class="sd">    '''</span>
+
+    <span class="k">assert</span> <span class="p">(</span><span class="n">fabs</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">norm</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">EPSILON</span><span class="p">)</span>
+
+    <span class="n">w</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">w</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span>
+    <span class="n">z</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">z</span>
+
+    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">quaternion_to_rotation_matrix</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span>
+</code></pre>
+</div>
+</details>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="doc doc-object doc-function">
+<h2 class="doc doc-heading" id="pyrotation.alt_azimuth_to_axis">
+
+<code class="highlight language-python"><span class="n">alt_azimuth_to_axis</span><span class="p">(</span><span class="n">alt_degree</span><span class="p">,</span> <span class="n">azimuth_degree</span><span class="p">)</span></code>
+
+
+      </h2>
+<div class="doc doc-contents ">
+<p>Calculate an axis represented by a unit vector using alt and azimuth 
+angles.</p>
+<p>NOTE: alt and azimuth are in degree, not radian. The output axis
+is always a unit vector.</p>
+<details class="quote">
+          <summary>Source code in <code>code_fmkit/pyrotation.py</code></summary>
+          <div class="highlight">
+<pre><span></span><code><span class="k">def</span> <span class="nf">alt_azimuth_to_axis</span><span class="p">(</span><span class="n">alt_degree</span><span class="p">,</span> <span class="n">azimuth_degree</span><span class="p">):</span>
+    <span class="sd">'''</span>
+<span class="sd">    Calculate an axis represented by a unit vector using alt and azimuth </span>
+<span class="sd">    angles.</span>
+
+<span class="sd">    NOTE: alt and azimuth are in degree, not radian. The output axis</span>
+<span class="sd">    is always a unit vector.</span>
+<span class="sd">    '''</span>
+
+    <span class="n">alt_radian</span> <span class="o">=</span> <span class="n">alt_degree</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">180</span>
+    <span class="n">azimuth_radian</span> <span class="o">=</span> <span class="n">azimuth_degree</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">180</span>
+
+    <span class="n">ux</span> <span class="o">=</span> <span class="n">cos</span><span class="p">(</span><span class="n">alt_radian</span><span class="p">)</span> <span class="o">*</span> <span class="n">cos</span><span class="p">(</span><span class="n">azimuth_radian</span><span class="p">)</span>
+    <span class="n">uy</span> <span class="o">=</span> <span class="n">cos</span><span class="p">(</span><span class="n">alt_radian</span><span class="p">)</span> <span class="o">*</span> <span class="n">sin</span><span class="p">(</span><span class="n">azimuth_radian</span><span class="p">)</span>
+    <span class="n">uz</span> <span class="o">=</span> <span class="n">sin</span><span class="p">(</span><span class="n">alt_radian</span><span class="p">)</span>
+
+    <span class="n">u</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">((</span><span class="n">ux</span><span class="p">,</span> <span class="n">uy</span><span class="p">,</span> <span class="n">uz</span><span class="p">))</span>
+    <span class="n">u</span> <span class="o">=</span> <span class="n">u</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">u</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">u</span>
+</code></pre>
+</div>
+</details>
+</div>
+</div>
+<div class="doc doc-object doc-function">
+<h2 class="doc doc-heading" id="pyrotation.angle_axis_to_rotation_matrix">
+
+<code class="highlight language-python"><span class="n">angle_axis_to_rotation_matrix</span><span class="p">(</span><span class="n">u</span><span class="p">)</span></code>
+
+
+      </h2>
+<div class="doc doc-contents ">
+<p>Convert angle-axis representation of rotation to a rotation matrix, using
+the Rodrigues formula.</p>
+<p>CAUTION: For numerical stability, small angle rotations are considered
+as no rotation (i.e., if angle &lt; 1e-6 radian, angle is considered as zero).</p>
+<details class="quote">
+          <summary>Source code in <code>code_fmkit/pyrotation.py</code></summary>
+          <div class="highlight">
+<pre><span></span><code><span class="k">def</span> <span class="nf">angle_axis_to_rotation_matrix</span><span class="p">(</span><span class="n">u</span><span class="p">):</span>
+    <span class="sd">'''</span>
+<span class="sd">    Convert angle-axis representation of rotation to a rotation matrix, using</span>
+<span class="sd">    the Rodrigues formula.</span>
+
+<span class="sd">    CAUTION: For numerical stability, small angle rotations are considered</span>
+<span class="sd">    as no rotation (i.e., if angle &lt; 1e-6 radian, angle is considered as zero).</span>
+<span class="sd">    '''</span>
+
+    <span class="n">angle</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">u</span><span class="p">)</span>
+
+    <span class="n">I</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">identity</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">angle</span> <span class="o">&lt;</span> <span class="n">EPSILON</span><span class="p">:</span>
+
+        <span class="k">return</span> <span class="n">I</span>
+
+    <span class="k">else</span><span class="p">:</span>
+
+        <span class="c1"># normalize the axis vector</span>
+        <span class="n">u</span> <span class="o">=</span> <span class="n">u</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">u</span><span class="p">)</span>
+
+
+        <span class="n">ux</span> <span class="o">=</span> <span class="n">vector_to_skew_symmetric_matrix</span><span class="p">(</span><span class="n">u</span><span class="p">)</span>
+
+        <span class="n">uut</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">)),</span> <span class="n">u</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+
+
+        <span class="n">R</span> <span class="o">=</span> <span class="n">I</span> <span class="o">*</span> <span class="n">cos</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span> <span class="o">+</span> <span class="n">ux</span> <span class="o">*</span> <span class="n">sin</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span> <span class="o">+</span> <span class="n">uut</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">cos</span><span class="p">(</span><span class="n">angle</span><span class="p">))</span>
+
+        <span class="k">return</span> <span class="n">R</span>
+</code></pre>
+</div>
+</details>
+</div>
+</div>
+<div class="doc doc-object doc-function">
+<h2 class="doc doc-heading" id="pyrotation.axis_to_alt_azimuth">
+
+<code class="highlight language-python"><span class="n">axis_to_alt_azimuth</span><span class="p">(</span><span class="n">u</span><span class="p">)</span></code>
+
+
+      </h2>
+<div class="doc doc-contents ">
+<p>Calculate the alt and azimuth angles from an axis vector "u".</p>
+<p>NOTE: alt and azimuth are in degree, not radian.</p>
+<p>CAUTION: In the degenerated case, where the norm of the vector u is zero,
+i.e., the vector u is pointting to the z-axis or the opposite of the 
+z-axis, the output alt is set to plus/minus 90 degrees and the azimuth to
+zero degrees.</p>
+<details class="quote">
+          <summary>Source code in <code>code_fmkit/pyrotation.py</code></summary>
+          <div class="highlight">
+<pre><span></span><code><span class="k">def</span> <span class="nf">axis_to_alt_azimuth</span><span class="p">(</span><span class="n">u</span><span class="p">):</span>
+    <span class="sd">'''</span>
+<span class="sd">    Calculate the alt and azimuth angles from an axis vector "u".</span>
+
+<span class="sd">    NOTE: alt and azimuth are in degree, not radian.</span>
+
+<span class="sd">    CAUTION: In the degenerated case, where the norm of the vector u is zero,</span>
+<span class="sd">    i.e., the vector u is pointting to the z-axis or the opposite of the </span>
+<span class="sd">    z-axis, the output alt is set to plus/minus 90 degrees and the azimuth to</span>
+<span class="sd">    zero degrees.</span>
+
+<span class="sd">    '''</span>
+
+    <span class="n">u_norm</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">u</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">fabs</span><span class="p">(</span><span class="n">fabs</span><span class="p">(</span><span class="n">u_norm</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">EPSILON</span><span class="p">:</span>
+
+        <span class="n">degenerated</span> <span class="o">=</span> <span class="kc">True</span>
+
+        <span class="n">alt</span> <span class="o">=</span> <span class="mi">90</span>
+        <span class="n">azimuth</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="n">gimbal_lock</span> <span class="o">=</span> <span class="kc">False</span>
+
+    <span class="k">else</span><span class="p">:</span>
+
+        <span class="n">degenerated</span> <span class="o">=</span> <span class="kc">False</span>
+
+        <span class="n">u</span> <span class="o">=</span> <span class="n">u</span> <span class="o">/</span> <span class="n">u_norm</span>
+
+        <span class="k">if</span> <span class="n">fabs</span><span class="p">(</span><span class="n">u</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">EPSILON</span><span class="p">:</span>
+
+            <span class="c1"># CAUTION: if u is pointing to the z-axis, the result is degenerated,</span>
+            <span class="c1"># i.e., azimuth is undefined.</span>
+
+            <span class="n">alt</span> <span class="o">=</span> <span class="mi">90</span>
+            <span class="n">azimuth</span> <span class="o">=</span> <span class="mi">0</span>
+
+            <span class="n">gimbal_lock</span> <span class="o">=</span> <span class="kc">True</span>
+
+        <span class="k">elif</span> <span class="n">fabs</span><span class="p">(</span><span class="n">u</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">EPSILON</span><span class="p">:</span>
+
+            <span class="c1"># Similarly, if u is pointing to the opposite of the z-axis, azimuth is</span>
+            <span class="c1"># also undefined.</span>
+
+            <span class="n">alt</span> <span class="o">=</span> <span class="o">-</span><span class="mi">90</span>
+            <span class="n">azimuth</span> <span class="o">=</span> <span class="mi">0</span>
+
+            <span class="n">gimbal_lock</span> <span class="o">=</span> <span class="kc">True</span>
+
+        <span class="k">else</span><span class="p">:</span>
+
+            <span class="n">alt</span> <span class="o">=</span> <span class="n">asin</span><span class="p">(</span><span class="n">u</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+
+            <span class="n">c</span> <span class="o">=</span> <span class="n">cos</span><span class="p">(</span><span class="n">alt</span><span class="p">)</span>
+
+            <span class="n">dx</span> <span class="o">=</span> <span class="n">u</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">/</span> <span class="n">c</span>
+            <span class="n">dy</span> <span class="o">=</span> <span class="n">u</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">/</span> <span class="n">c</span>
+
+            <span class="n">azimuth</span> <span class="o">=</span> <span class="n">atan2</span><span class="p">(</span><span class="n">dy</span><span class="p">,</span> <span class="n">dx</span><span class="p">)</span>
+
+            <span class="n">alt</span> <span class="o">=</span> <span class="n">alt</span> <span class="o">*</span> <span class="mi">180</span> <span class="o">/</span> <span class="n">pi</span>
+            <span class="n">azimuth</span> <span class="o">=</span> <span class="n">azimuth</span> <span class="o">*</span> <span class="mi">180</span> <span class="o">/</span> <span class="n">pi</span>
+
+            <span class="n">gimbal_lock</span> <span class="o">=</span> <span class="kc">False</span>
+
+    <span class="k">return</span> <span class="n">alt</span><span class="p">,</span> <span class="n">azimuth</span><span class="p">,</span> <span class="n">gimbal_lock</span><span class="p">,</span> <span class="n">degenerated</span>
+</code></pre>
+</div>
+</details>
+</div>
+</div>
+<div class="doc doc-object doc-function">
+<h2 class="doc doc-heading" id="pyrotation.euler_zyx_to_rotation_matrix">
+
+<code class="highlight language-python"><span class="n">euler_zyx_to_rotation_matrix</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span></code>
+
+
+      </h2>
+<div class="doc doc-contents ">
+<p>Converting a rotation represented by three Euler angles (z-y'-x") to
+rotation matrix represenation, i.e., using the following,</p>
+<div class="highlight">
+<pre><span></span><code>R = R_z * R_y * R_x
+</code></pre>
+</div>
+<p>where,</p>
+<div class="highlight">
+<pre><span></span><code>R_z             = [ cos(z)     -sin(z)        0       ]
+                  [ sin(z)     cos(z)         0       ]
+                  [ 0            0            1       ]
+
+R_y             = [ cos(y)       0            sin(y)  ]
+                  [ 0            1            0       ]
+                  [ -sin(y)      0            cos(y)  ]
+
+R_x             = [ 1            0            0       ]
+                  [ 0            cos(x)       -sin(x) ]
+                  [ 0            sin(x)       cos(x)  ]
+</code></pre>
+</div>
+<p>Also, the angles are named as following,</p>
+<div class="highlight">
+<pre><span></span><code>z - yaw (psi)
+y - pitch (theta)
+x - roll (phi)
+</code></pre>
+</div>
+<p>These angles are also called Tait-Bryan angles, and we use the z-y'-x"
+intrinsic convention. See this for the conventions:</p>
+<div class="highlight">
+<pre><span></span><code>https://en.wikipedia.org/wiki/Euler_angles#Tait–Bryan_angles
+</code></pre>
+</div>
+<p>Also see this for the conversion between different representations:</p>
+<div class="highlight">
+<pre><span></span><code>https://en.wikipedia.org/wiki/Rotation_formalisms_in_three_dimension
+</code></pre>
+</div>
+<p>Caution: The three input angles are in radian!</p>
+<details class="quote">
+          <summary>Source code in <code>code_fmkit/pyrotation.py</code></summary>
+          <div class="highlight">
+<pre><span></span><code><span class="k">def</span> <span class="nf">euler_zyx_to_rotation_matrix</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+    <span class="sd">'''</span>
+<span class="sd">    Converting a rotation represented by three Euler angles (z-y'-x") to</span>
+<span class="sd">    rotation matrix represenation, i.e., using the following,</span>
+
+<span class="sd">        R = R_z * R_y * R_x</span>
+
+<span class="sd">    where,</span>
+
+<span class="sd">        R_z             = [ cos(z)     -sin(z)        0       ]</span>
+<span class="sd">                          [ sin(z)     cos(z)         0       ]</span>
+<span class="sd">                          [ 0            0            1       ]</span>
+
+<span class="sd">        R_y             = [ cos(y)       0            sin(y)  ]</span>
+<span class="sd">                          [ 0            1            0       ]</span>
+<span class="sd">                          [ -sin(y)      0            cos(y)  ]</span>
+
+<span class="sd">        R_x             = [ 1            0            0       ]</span>
+<span class="sd">                          [ 0            cos(x)       -sin(x) ]</span>
+<span class="sd">                          [ 0            sin(x)       cos(x)  ]</span>
+
+<span class="sd">    Also, the angles are named as following,</span>
+
+<span class="sd">        z - yaw (psi)</span>
+<span class="sd">        y - pitch (theta)</span>
+<span class="sd">        x - roll (phi)</span>
+
+<span class="sd">    These angles are also called Tait-Bryan angles, and we use the z-y'-x"</span>
+<span class="sd">    intrinsic convention. See this for the conventions:</span>
+
+<span class="sd">        https://en.wikipedia.org/wiki/Euler_angles#Tait–Bryan_angles</span>
+
+<span class="sd">    Also see this for the conversion between different representations:</span>
+
+<span class="sd">        https://en.wikipedia.org/wiki/Rotation_formalisms_in_three_dimension</span>
+
+<span class="sd">    Caution: The three input angles are in radian!</span>
+
+<span class="sd">    '''</span>
+
+
+    <span class="n">sz</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+    <span class="n">cz</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+    <span class="n">sy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+    <span class="n">cy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+    <span class="n">sx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">cx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+    <span class="n">a11</span> <span class="o">=</span> <span class="n">cz</span> <span class="o">*</span> <span class="n">cy</span>
+    <span class="n">a12</span> <span class="o">=</span> <span class="n">cz</span> <span class="o">*</span> <span class="n">sy</span> <span class="o">*</span> <span class="n">sx</span> <span class="o">-</span> <span class="n">cx</span> <span class="o">*</span> <span class="n">sz</span>
+    <span class="n">a13</span> <span class="o">=</span> <span class="n">sz</span> <span class="o">*</span> <span class="n">sx</span> <span class="o">+</span> <span class="n">cz</span> <span class="o">*</span> <span class="n">cx</span> <span class="o">*</span> <span class="n">sy</span>
+    <span class="n">a21</span> <span class="o">=</span> <span class="n">cy</span> <span class="o">*</span> <span class="n">sz</span>
+    <span class="n">a22</span> <span class="o">=</span> <span class="n">cz</span> <span class="o">*</span> <span class="n">cx</span> <span class="o">+</span> <span class="n">sz</span> <span class="o">*</span> <span class="n">sy</span> <span class="o">*</span> <span class="n">sx</span>
+    <span class="n">a23</span> <span class="o">=</span> <span class="n">cx</span> <span class="o">*</span> <span class="n">sz</span> <span class="o">*</span> <span class="n">sy</span> <span class="o">-</span> <span class="n">cz</span> <span class="o">*</span> <span class="n">sx</span>
+    <span class="n">a31</span> <span class="o">=</span> <span class="o">-</span><span class="n">sy</span>
+    <span class="n">a32</span> <span class="o">=</span> <span class="n">cy</span> <span class="o">*</span> <span class="n">sx</span>
+    <span class="n">a33</span> <span class="o">=</span> <span class="n">cy</span> <span class="o">*</span> <span class="n">cx</span>
+
+    <span class="n">R</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">([[</span><span class="n">a11</span><span class="p">,</span> <span class="n">a12</span><span class="p">,</span> <span class="n">a13</span><span class="p">],</span> <span class="p">[</span><span class="n">a21</span><span class="p">,</span> <span class="n">a22</span><span class="p">,</span> <span class="n">a23</span><span class="p">],</span> <span class="p">[</span><span class="n">a31</span><span class="p">,</span> <span class="n">a32</span><span class="p">,</span> <span class="n">a33</span><span class="p">]])</span>
+
+    <span class="k">return</span> <span class="n">R</span>
+</code></pre>
+</div>
+</details>
+</div>
+</div>
+<div class="doc doc-object doc-function">
+<h2 class="doc doc-heading" id="pyrotation.normalize_rotation_matrix">
+
+<code class="highlight language-python"><span class="n">normalize_rotation_matrix</span><span class="p">(</span><span class="n">R</span><span class="p">)</span></code>
+
+
+      </h2>
+<div class="doc doc-contents ">
+<p>Normalize a rotation matrix with SVD, i.e., using the following step.</p>
+<div class="highlight">
+<pre><span></span><code>u, s, vh = np.linalg.svd(R)
+
+return np.matmul(u, vh)
+</code></pre>
+</div>
+<details class="quote">
+          <summary>Source code in <code>code_fmkit/pyrotation.py</code></summary>
+          <div class="highlight">
+<pre><span></span><code><span class="k">def</span> <span class="nf">normalize_rotation_matrix</span><span class="p">(</span><span class="n">R</span><span class="p">):</span>
+    <span class="sd">'''</span>
+<span class="sd">    Normalize a rotation matrix with SVD, i.e., using the following step.</span>
+
+<span class="sd">        u, s, vh = np.linalg.svd(R)</span>
+
+<span class="sd">        return np.matmul(u, vh)</span>
+
+<span class="sd">    '''</span>
+
+    <span class="n">u</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">vh</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">svd</span><span class="p">(</span><span class="n">R</span><span class="p">)</span>
+    <span class="k">del</span> <span class="n">s</span>
+
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">vh</span><span class="p">)</span>
+</code></pre>
+</div>
+</details>
+</div>
+</div>
+<div class="doc doc-object doc-function">
+<h2 class="doc doc-heading" id="pyrotation.orthonormal_basis_from_two_vectors">
+
+<code class="highlight language-python"><span class="n">orthonormal_basis_from_two_vectors</span><span class="p">(</span><span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">,</span> <span class="n">v1_default</span><span class="p">,</span> <span class="n">v2_default</span><span class="p">)</span></code>
+
+
+      </h2>
+<div class="doc doc-contents ">
+<p>Construct three orthonormal basis vectors from arbitrary two vectors.
+The output orthonormal basis (u1, u2, u3) has the following properties.</p>
+<p>(1) The vector u1 is in the direction of v1. If v1 is all zero, v1_default
+is used instead.</p>
+<p>(2) The vector u2 is in the same plane spanned by v1 and v2, and u2 is
+perpendicular to v1, i.e., their dot product is zero. If v2 is all zero
+or if v2 has the same direction as v1, v2_default is used instead.</p>
+<p>(3) The vector u3 is perpendicular to the plane spanned by v1 and v2.</p>
+<details class="quote">
+          <summary>Source code in <code>code_fmkit/pyrotation.py</code></summary>
+          <div class="highlight">
+<pre><span></span><code><span class="k">def</span> <span class="nf">orthonormal_basis_from_two_vectors</span><span class="p">(</span><span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">,</span> <span class="n">v1_default</span><span class="p">,</span> <span class="n">v2_default</span><span class="p">):</span>
+    <span class="sd">'''</span>
+<span class="sd">    Construct three orthonormal basis vectors from arbitrary two vectors.</span>
+<span class="sd">    The output orthonormal basis (u1, u2, u3) has the following properties.</span>
+
+<span class="sd">    (1) The vector u1 is in the direction of v1. If v1 is all zero, v1_default</span>
+<span class="sd">    is used instead.</span>
+
+<span class="sd">    (2) The vector u2 is in the same plane spanned by v1 and v2, and u2 is</span>
+<span class="sd">    perpendicular to v1, i.e., their dot product is zero. If v2 is all zero</span>
+<span class="sd">    or if v2 has the same direction as v1, v2_default is used instead.</span>
+
+<span class="sd">    (3) The vector u3 is perpendicular to the plane spanned by v1 and v2.</span>
+
+<span class="sd">    '''</span>
+    <span class="n">n1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">v1</span><span class="p">)</span>
+    <span class="n">n2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">v2</span><span class="p">)</span>
+    <span class="n">v3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cross</span><span class="p">(</span><span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">)</span>
+    <span class="n">n3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">v3</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">fabs</span><span class="p">(</span><span class="n">n1</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">EPSILON</span><span class="p">:</span>
+
+        <span class="n">v1</span> <span class="o">=</span> <span class="n">v1_default</span>
+
+    <span class="k">if</span> <span class="n">fabs</span><span class="p">(</span><span class="n">n2</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">EPSILON</span> <span class="ow">or</span> <span class="n">fabs</span><span class="p">(</span><span class="n">n3</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">EPSILON</span><span class="p">:</span>
+
+        <span class="n">v2</span> <span class="o">=</span> <span class="n">v2_default</span>
+
+    <span class="n">u1</span> <span class="o">=</span> <span class="n">v1</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">v1</span><span class="p">)</span>
+    <span class="n">v3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cross</span><span class="p">(</span><span class="n">u1</span><span class="p">,</span> <span class="n">v2</span><span class="p">)</span>
+    <span class="n">u3</span> <span class="o">=</span> <span class="n">v3</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">v3</span><span class="p">)</span>
+    <span class="n">v2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cross</span><span class="p">(</span><span class="n">u3</span><span class="p">,</span> <span class="n">u1</span><span class="p">)</span>
+    <span class="n">u2</span> <span class="o">=</span> <span class="n">v2</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">v2</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">u1</span><span class="p">,</span> <span class="n">u2</span><span class="p">,</span> <span class="n">u3</span>
+</code></pre>
+</div>
+</details>
+</div>
+</div>
+<div class="doc doc-object doc-function">
+<h2 class="doc doc-heading" id="pyrotation.rotate_a_point_by_angle_axis">
+
+<code class="highlight language-python"><span class="n">rotate_a_point_by_angle_axis</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">u</span><span class="p">)</span></code>
+
+
+      </h2>
+<div class="doc doc-contents ">
+<p>Rotate a point "p" along the axis "u" by an angle which is the norm of "u".
+Both "p" and "u" are numpy arrays of three elements.</p>
+<p>CAUTION: For numerical stability, small angle rotations are considered
+as no rotation (i.e., if angle &lt; 1e-6 radian, angle is considered as zero).</p>
+<details class="quote">
+          <summary>Source code in <code>code_fmkit/pyrotation.py</code></summary>
+          <div class="highlight">
+<pre><span></span><code><span class="k">def</span> <span class="nf">rotate_a_point_by_angle_axis</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">u</span><span class="p">):</span>
+    <span class="sd">'''</span>
+<span class="sd">    Rotate a point "p" along the axis "u" by an angle which is the norm of "u".</span>
+<span class="sd">    Both "p" and "u" are numpy arrays of three elements.</span>
+
+<span class="sd">    CAUTION: For numerical stability, small angle rotations are considered</span>
+<span class="sd">    as no rotation (i.e., if angle &lt; 1e-6 radian, angle is considered as zero).</span>
+
+<span class="sd">    '''</span>
+
+    <span class="n">angle</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">u</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">fabs</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">EPSILON</span><span class="p">:</span>
+
+        <span class="k">return</span> <span class="n">p</span>
+
+    <span class="k">else</span><span class="p">:</span>
+
+        <span class="c1"># normalize the axis vector</span>
+        <span class="n">u</span> <span class="o">=</span> <span class="n">u</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">u</span><span class="p">)</span>
+
+        <span class="n">pp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">u</span><span class="p">)</span> <span class="o">*</span> <span class="n">u</span>
+        <span class="n">pv</span> <span class="o">=</span> <span class="n">p</span> <span class="o">-</span> <span class="n">pp</span>
+
+        <span class="n">u_x_cross</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cross</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">p</span><span class="p">)</span>
+
+        <span class="n">rp</span> <span class="o">=</span> <span class="n">pp</span> <span class="o">+</span> <span class="n">pv</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span> <span class="o">+</span> <span class="n">u_x_cross</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">rp</span>
+</code></pre>
+</div>
+</details>
+</div>
+</div>
+<div class="doc doc-object doc-function">
+<h2 class="doc doc-heading" id="pyrotation.rotate_a_point_by_rotation_matrix">
+
+<code class="highlight language-python"><span class="n">rotate_a_point_by_rotation_matrix</span><span class="p">(</span><span class="n">R</span><span class="p">,</span> <span class="n">p</span><span class="p">)</span></code>
+
+
+      </h2>
+<div class="doc doc-contents ">
+<p>Rotate a point "p" by a rotation matrix "R". "p" must be a numpy array
+of three elements. "R" must be a numpy 3-by-3 matrix. The result is a
+numpy array of three elements, same as the input "p".</p>
+<p>CAUTION: This function does not validate whether R is really a rotation
+matrix. It just do the following operations.</p>
+<div class="highlight">
+<pre><span></span><code>rp = np.matmul(R, p.reshape(3, 1))
+
+return rp.flatten()
+</code></pre>
+</div>
+<details class="quote">
+          <summary>Source code in <code>code_fmkit/pyrotation.py</code></summary>
+          <div class="highlight">
+<pre><span></span><code><span class="k">def</span> <span class="nf">rotate_a_point_by_rotation_matrix</span><span class="p">(</span><span class="n">R</span><span class="p">,</span> <span class="n">p</span><span class="p">):</span>
+    <span class="sd">'''</span>
+<span class="sd">    Rotate a point "p" by a rotation matrix "R". "p" must be a numpy array</span>
+<span class="sd">    of three elements. "R" must be a numpy 3-by-3 matrix. The result is a</span>
+<span class="sd">    numpy array of three elements, same as the input "p".</span>
+
+<span class="sd">    CAUTION: This function does not validate whether R is really a rotation</span>
+<span class="sd">    matrix. It just do the following operations.</span>
+
+<span class="sd">        rp = np.matmul(R, p.reshape(3, 1))</span>
+
+<span class="sd">        return rp.flatten()</span>
+
+<span class="sd">    '''</span>
+    <span class="n">rp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">R</span><span class="p">,</span> <span class="n">p</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+
+    <span class="k">return</span> <span class="n">rp</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+</code></pre>
+</div>
+</details>
+</div>
+</div>
+<div class="doc doc-object doc-function">
+<h2 class="doc doc-heading" id="pyrotation.rotate_points_by_angle_axis">
+
+<code class="highlight language-python"><span class="n">rotate_points_by_angle_axis</span><span class="p">(</span><span class="n">ps</span><span class="p">,</span> <span class="n">u</span><span class="p">)</span></code>
+
+
+      </h2>
+<div class="doc doc-contents ">
+<p>Rotate points "ps" along the axis "u" by an angle which is the norm of "u".
+"ps" must a numpy 3-by-n array, and u must a numpy array of three elements.</p>
+<p>CAUTION: For numerical stability, small angle rotations are considered
+as no rotation (i.e., if angle &lt; 1e-6 radian, angle is considered as zero).</p>
+<p>CAUTION: The input "ps" is now an array of vectors, where each vector is a
+column.</p>
+<details class="quote">
+          <summary>Source code in <code>code_fmkit/pyrotation.py</code></summary>
+          <div class="highlight">
+<pre><span></span><code><span class="k">def</span> <span class="nf">rotate_points_by_angle_axis</span><span class="p">(</span><span class="n">ps</span><span class="p">,</span> <span class="n">u</span><span class="p">):</span>
+    <span class="sd">'''</span>
+<span class="sd">    Rotate points "ps" along the axis "u" by an angle which is the norm of "u".</span>
+<span class="sd">    "ps" must a numpy 3-by-n array, and u must a numpy array of three elements.</span>
+
+<span class="sd">    CAUTION: For numerical stability, small angle rotations are considered</span>
+<span class="sd">    as no rotation (i.e., if angle &lt; 1e-6 radian, angle is considered as zero).</span>
+
+<span class="sd">    CAUTION: The input "ps" is now an array of vectors, where each vector is a</span>
+<span class="sd">    column.</span>
+
+<span class="sd">    '''</span>
+
+    <span class="n">angle</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">u</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">fabs</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">EPSILON</span><span class="p">:</span>
+
+        <span class="k">return</span> <span class="n">ps</span>
+
+    <span class="k">else</span><span class="p">:</span>
+
+        <span class="c1"># normalize the axis vector</span>
+        <span class="n">u</span> <span class="o">=</span> <span class="n">u</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">u</span><span class="p">)</span>
+
+        <span class="n">u</span> <span class="o">=</span> <span class="n">u</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+
+        <span class="c1"># CAUTION: since ps is an array of vectors, pp should be the dot</span>
+        <span class="c1"># product of each vector with u to obtain an array of scalars, then</span>
+        <span class="c1"># multiply each scalar with u to form an array of vectors.</span>
+        <span class="n">pp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">ps</span><span class="p">))</span>
+        <span class="n">pv</span> <span class="o">=</span> <span class="n">ps</span> <span class="o">-</span> <span class="n">pp</span>
+
+        <span class="c1"># CAUTION: numpy uses the last axis to define vectors in the cross </span>
+        <span class="c1"># product with arrays of vectors</span>
+        <span class="n">u_x_cross</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cross</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">ps</span><span class="o">.</span><span class="n">T</span><span class="p">)</span><span class="o">.</span><span class="n">T</span>
+
+        <span class="n">rps</span> <span class="o">=</span> <span class="n">pp</span> <span class="o">+</span> <span class="n">pv</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span> <span class="o">+</span> <span class="n">u_x_cross</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">rps</span>
+</code></pre>
+</div>
+</details>
+</div>
+</div>
+<div class="doc doc-object doc-function">
+<h2 class="doc doc-heading" id="pyrotation.rotate_points_by_rotation_matrix">
+
+<code class="highlight language-python"><span class="n">rotate_points_by_rotation_matrix</span><span class="p">(</span><span class="n">R</span><span class="p">,</span> <span class="n">ps</span><span class="p">)</span></code>
+
+
+      </h2>
+<div class="doc doc-contents ">
+<p>Rotate points array "ps" by a rotation matrix "R". "ps" must be a numpy 
+3-by-n matrix where. "R" must be a numpy 3-by-3 matrix. The result is
+a numpy 3-by-n matrix, same as the input "ps".</p>
+<p>CAUTION: This function does not validate whether R is really a rotation
+matrix. It just do the following operations.</p>
+<div class="highlight">
+<pre><span></span><code>rps = np.matmul(R, ps)
+
+return rps
+</code></pre>
+</div>
+<details class="quote">
+          <summary>Source code in <code>code_fmkit/pyrotation.py</code></summary>
+          <div class="highlight">
+<pre><span></span><code><span class="k">def</span> <span class="nf">rotate_points_by_rotation_matrix</span><span class="p">(</span><span class="n">R</span><span class="p">,</span> <span class="n">ps</span><span class="p">):</span>
+    <span class="sd">'''</span>
+<span class="sd">    Rotate points array "ps" by a rotation matrix "R". "ps" must be a numpy </span>
+<span class="sd">    3-by-n matrix where. "R" must be a numpy 3-by-3 matrix. The result is</span>
+<span class="sd">    a numpy 3-by-n matrix, same as the input "ps".</span>
+
+<span class="sd">    CAUTION: This function does not validate whether R is really a rotation</span>
+<span class="sd">    matrix. It just do the following operations.</span>
+
+<span class="sd">        rps = np.matmul(R, ps)</span>
+
+<span class="sd">        return rps</span>
+
+<span class="sd">    '''</span>
+
+    <span class="n">rps</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">R</span><span class="p">,</span> <span class="n">ps</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">rps</span>
+</code></pre>
+</div>
+</details>
+</div>
+</div>
+<div class="doc doc-object doc-function">
+<h2 class="doc doc-heading" id="pyrotation.rotation_matrix_from_orthonormal_basis">
+
+<code class="highlight language-python"><span class="n">rotation_matrix_from_orthonormal_basis</span><span class="p">(</span><span class="n">ux</span><span class="p">,</span> <span class="n">uy</span><span class="p">,</span> <span class="n">uz</span><span class="p">)</span></code>
+
+
+      </h2>
+<div class="doc doc-contents ">
+<p>Construct a 3-by-3 rotation matrix from a set of orthonormal basis vectors.</p>
+<details class="quote">
+          <summary>Source code in <code>code_fmkit/pyrotation.py</code></summary>
+          <div class="highlight">
+<pre><span></span><code><span class="k">def</span> <span class="nf">rotation_matrix_from_orthonormal_basis</span><span class="p">(</span><span class="n">ux</span><span class="p">,</span> <span class="n">uy</span><span class="p">,</span> <span class="n">uz</span><span class="p">):</span>
+    <span class="sd">'''</span>
+<span class="sd">    Construct a 3-by-3 rotation matrix from a set of orthonormal basis vectors.</span>
+
+<span class="sd">    '''</span>
+
+    <span class="n">R</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+    <span class="n">R</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">ux</span>
+    <span class="n">R</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">uy</span>
+    <span class="n">R</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">uz</span>
+
+    <span class="k">return</span> <span class="n">R</span>
+</code></pre>
+</div>
+</details>
+</div>
+</div>
+<div class="doc doc-object doc-function">
+<h2 class="doc doc-heading" id="pyrotation.rotation_matrix_from_xy">
+
+<code class="highlight language-python"><span class="n">rotation_matrix_from_xy</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span></code>
+
+
+      </h2>
+<div class="doc doc-contents ">
+<p>Construct three orthonormal basis, i.e., the rotation matrix, based on 
+two vectors, where one of them is the x-axis and the other is the y-axis.
+The z-axis is chosen accordingly.</p>
+<p>The x-axis is always preserved, and if the y-axis is not perpendicular to
+the x-axis, its projection on the YOZ plane defined by the x-axis will be
+the y-axis.</p>
+<p>NOTE: If the vector x has zero length, it is a degenerated case and it is 
+set to (1, 0, 0)</p>
+<p>NOTE: If the vector y has zero length or if the vector y is in the same
+direction of the vector x, it is a degenerated case and the vector y is
+set to (0, 1, 0).</p>
+<p>CAUTION: No warning or exception is generated in the degenerated case!</p>
+<details class="quote">
+          <summary>Source code in <code>code_fmkit/pyrotation.py</code></summary>
+          <div class="highlight">
+<pre><span></span><code><span class="k">def</span> <span class="nf">rotation_matrix_from_xy</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="sd">'''</span>
+<span class="sd">    Construct three orthonormal basis, i.e., the rotation matrix, based on </span>
+<span class="sd">    two vectors, where one of them is the x-axis and the other is the y-axis.</span>
+<span class="sd">    The z-axis is chosen accordingly.</span>
+
+<span class="sd">    The x-axis is always preserved, and if the y-axis is not perpendicular to</span>
+<span class="sd">    the x-axis, its projection on the YOZ plane defined by the x-axis will be</span>
+<span class="sd">    the y-axis.</span>
+
+<span class="sd">    NOTE: If the vector x has zero length, it is a degenerated case and it is </span>
+<span class="sd">    set to (1, 0, 0)</span>
+
+<span class="sd">    NOTE: If the vector y has zero length or if the vector y is in the same</span>
+<span class="sd">    direction of the vector x, it is a degenerated case and the vector y is</span>
+<span class="sd">    set to (0, 1, 0).</span>
+
+<span class="sd">    CAUTION: No warning or exception is generated in the degenerated case!</span>
+
+<span class="sd">    '''</span>
+
+    <span class="n">v1</span> <span class="o">=</span> <span class="n">x</span>
+    <span class="n">v2</span> <span class="o">=</span> <span class="n">y</span>
+    <span class="n">v1_default</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+    <span class="n">v2_default</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+    <span class="n">u1</span><span class="p">,</span> <span class="n">u2</span><span class="p">,</span> <span class="n">u3</span> <span class="o">=</span> <span class="n">orthonormal_basis_from_two_vectors</span><span class="p">(</span><span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">,</span> 
+                                                    <span class="n">v1_default</span><span class="p">,</span> <span class="n">v2_default</span><span class="p">)</span>
+
+    <span class="n">R</span> <span class="o">=</span> <span class="n">rotation_matrix_from_orthonormal_basis</span><span class="p">(</span><span class="n">u1</span><span class="p">,</span> <span class="n">u2</span><span class="p">,</span> <span class="n">u3</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">R</span>
+</code></pre>
+</div>
+</details>
+</div>
+</div>
+<div class="doc doc-object doc-function">
+<h2 class="doc doc-heading" id="pyrotation.rotation_matrix_from_yz">
+
+<code class="highlight language-python"><span class="n">rotation_matrix_from_yz</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span></code>
+
+
+      </h2>
+<div class="doc doc-contents ">
+<p>Construct three orthonormal basis, i.e., the rotation matrix, based on 
+two vectors, where one of them is the y-axis and the other is the z-axis.
+The x-axis is chosen accordingly.</p>
+<p>The y-axis is always preserved, and if the z-axis is not perpendicular to
+the y-axis, its projection on the ZOX plane defined by the y-axis will be
+the z-axis.</p>
+<p>NOTE: If the vector y has zero length, it is a degenerated case and it is 
+set to (0, 1, 0)</p>
+<p>NOTE: If the vector z has zero length or if the vector z is in the same
+direction of the vector y, it is a degenerated case and the vector z is
+set to (0, 0, 1).</p>
+<p>CAUTION: No warning or exception is generated in the degenerated case!</p>
+<details class="quote">
+          <summary>Source code in <code>code_fmkit/pyrotation.py</code></summary>
+          <div class="highlight">
+<pre><span></span><code><span class="k">def</span> <span class="nf">rotation_matrix_from_yz</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">):</span>
+    <span class="sd">'''</span>
+<span class="sd">    Construct three orthonormal basis, i.e., the rotation matrix, based on </span>
+<span class="sd">    two vectors, where one of them is the y-axis and the other is the z-axis.</span>
+<span class="sd">    The x-axis is chosen accordingly.</span>
+
+<span class="sd">    The y-axis is always preserved, and if the z-axis is not perpendicular to</span>
+<span class="sd">    the y-axis, its projection on the ZOX plane defined by the y-axis will be</span>
+<span class="sd">    the z-axis.</span>
+
+<span class="sd">    NOTE: If the vector y has zero length, it is a degenerated case and it is </span>
+<span class="sd">    set to (0, 1, 0)</span>
+
+<span class="sd">    NOTE: If the vector z has zero length or if the vector z is in the same</span>
+<span class="sd">    direction of the vector y, it is a degenerated case and the vector z is</span>
+<span class="sd">    set to (0, 0, 1).</span>
+
+<span class="sd">    CAUTION: No warning or exception is generated in the degenerated case!</span>
+
+<span class="sd">    '''</span>
+
+    <span class="n">v1</span> <span class="o">=</span> <span class="n">y</span>
+    <span class="n">v2</span> <span class="o">=</span> <span class="n">z</span>
+    <span class="n">v1_default</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+    <span class="n">v2_default</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+    <span class="n">u1</span><span class="p">,</span> <span class="n">u2</span><span class="p">,</span> <span class="n">u3</span> <span class="o">=</span> <span class="n">orthonormal_basis_from_two_vectors</span><span class="p">(</span><span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">,</span> 
+                                                    <span class="n">v1_default</span><span class="p">,</span> <span class="n">v2_default</span><span class="p">)</span>
+
+    <span class="n">R</span> <span class="o">=</span> <span class="n">rotation_matrix_from_orthonormal_basis</span><span class="p">(</span><span class="n">u3</span><span class="p">,</span> <span class="n">u1</span><span class="p">,</span> <span class="n">u2</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">R</span>
+</code></pre>
+</div>
+</details>
+</div>
+</div>
+<div class="doc doc-object doc-function">
+<h2 class="doc doc-heading" id="pyrotation.rotation_matrix_from_zx">
+
+<code class="highlight language-python"><span class="n">rotation_matrix_from_zx</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span></code>
+
+
+      </h2>
+<div class="doc doc-contents ">
+<p>Construct three orthonormal basis, i.e., the rotation matrix, based on 
+two vectors, where one of them is the y-axis and the other is the z-axis.
+The x-axis is chosen accordingly.</p>
+<p>The y-axis is always preserved, and if the z-axis is not perpendicular to
+the y-axis, its projection on the ZOX plane defined by the y-axis will be
+the z-axis.</p>
+<p>NOTE: If the vector y has zero length, it is a degenerated case and it is 
+set to (0, 1, 0)</p>
+<p>NOTE: If the vector z has zero length or if the vector z is in the same
+direction of the vector y, it is a degenerated case and the vector z is
+set to (0, 0, 1).</p>
+<p>CAUTION: No warning or exception is generated in the degenerated case!</p>
+<details class="quote">
+          <summary>Source code in <code>code_fmkit/pyrotation.py</code></summary>
+          <div class="highlight">
+<pre><span></span><code><span class="k">def</span> <span class="nf">rotation_matrix_from_zx</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+    <span class="sd">'''</span>
+<span class="sd">    Construct three orthonormal basis, i.e., the rotation matrix, based on </span>
+<span class="sd">    two vectors, where one of them is the y-axis and the other is the z-axis.</span>
+<span class="sd">    The x-axis is chosen accordingly.</span>
+
+<span class="sd">    The y-axis is always preserved, and if the z-axis is not perpendicular to</span>
+<span class="sd">    the y-axis, its projection on the ZOX plane defined by the y-axis will be</span>
+<span class="sd">    the z-axis.</span>
+
+<span class="sd">    NOTE: If the vector y has zero length, it is a degenerated case and it is </span>
+<span class="sd">    set to (0, 1, 0)</span>
+
+<span class="sd">    NOTE: If the vector z has zero length or if the vector z is in the same</span>
+<span class="sd">    direction of the vector y, it is a degenerated case and the vector z is</span>
+<span class="sd">    set to (0, 0, 1).</span>
+
+<span class="sd">    CAUTION: No warning or exception is generated in the degenerated case!</span>
+
+<span class="sd">    '''</span>
+
+    <span class="n">v1</span> <span class="o">=</span> <span class="n">z</span>
+    <span class="n">v2</span> <span class="o">=</span> <span class="n">x</span>
+    <span class="n">v1_default</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+    <span class="n">v2_default</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+    <span class="n">u1</span><span class="p">,</span> <span class="n">u2</span><span class="p">,</span> <span class="n">u3</span> <span class="o">=</span> <span class="n">orthonormal_basis_from_two_vectors</span><span class="p">(</span><span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">,</span> 
+                                                    <span class="n">v1_default</span><span class="p">,</span> <span class="n">v2_default</span><span class="p">)</span>
+
+    <span class="n">R</span> <span class="o">=</span> <span class="n">rotation_matrix_from_orthonormal_basis</span><span class="p">(</span><span class="n">u2</span><span class="p">,</span> <span class="n">u3</span><span class="p">,</span> <span class="n">u1</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">R</span>
+</code></pre>
+</div>
+</details>
+</div>
+</div>
+<div class="doc doc-object doc-function">
+<h2 class="doc doc-heading" id="pyrotation.rotation_matrix_to_angle_axis">
+
+<code class="highlight language-python"><span class="n">rotation_matrix_to_angle_axis</span><span class="p">(</span><span class="n">R</span><span class="p">)</span></code>
+
+
+      </h2>
+<div class="doc doc-contents ">
+<p>Convert a rotation matrix to an angle-axis representation.</p>
+<p>NOTE: The returned rotation angle is between 0 and pi.</p>
+<p>CAUTION: For numerical stability, small angle rotations are considered
+as no rotation.</p>
+<p>CAUTION: In the degenerated case, where the rotation angle is zero, the
+axis is set to (0, 0, 1), i.e., the z-axis.</p>
+<details class="quote">
+          <summary>Source code in <code>code_fmkit/pyrotation.py</code></summary>
+          <div class="highlight">
+<pre><span></span><code><span class="k">def</span> <span class="nf">rotation_matrix_to_angle_axis</span><span class="p">(</span><span class="n">R</span><span class="p">):</span>
+    <span class="sd">'''</span>
+<span class="sd">    Convert a rotation matrix to an angle-axis representation.</span>
+
+<span class="sd">    NOTE: The returned rotation angle is between 0 and pi.</span>
+
+<span class="sd">    CAUTION: For numerical stability, small angle rotations are considered</span>
+<span class="sd">    as no rotation.</span>
+
+<span class="sd">    CAUTION: In the degenerated case, where the rotation angle is zero, the</span>
+<span class="sd">    axis is set to (0, 0, 1), i.e., the z-axis.</span>
+
+<span class="sd">    '''</span>
+
+    <span class="c1"># TODO: this might be buggy!!!</span>
+
+    <span class="c1"># Check the determinant of R! It must be 1.</span>
+    <span class="k">assert</span> <span class="n">fabs</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">det</span><span class="p">(</span><span class="n">R</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">EPSILON</span>
+    <span class="k">assert</span> <span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">R</span><span class="p">,</span> <span class="n">R</span><span class="o">.</span><span class="n">T</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">identity</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span> <span class="n">atol</span><span class="o">=</span><span class="n">EPSILON</span><span class="p">)</span>
+
+
+
+    <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">R</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">identity</span><span class="p">(</span><span class="mi">3</span><span class="p">)):</span>
+
+        <span class="n">u</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+
+    <span class="k">else</span><span class="p">:</span>
+
+        <span class="n">angle</span> <span class="o">=</span> <span class="n">acos</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">trace</span><span class="p">(</span><span class="n">R</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+
+        <span class="n">s</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">sin</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span>
+
+        <span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="n">R</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">R</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span> <span class="o">/</span> <span class="n">s</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="p">(</span><span class="n">R</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">-</span> <span class="n">R</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span> <span class="o">/</span> <span class="n">s</span>
+        <span class="n">z</span> <span class="o">=</span> <span class="p">(</span><span class="n">R</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">R</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span> <span class="o">/</span> <span class="n">s</span>
+
+        <span class="n">u</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">((</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">))</span>
+        <span class="n">u</span> <span class="o">=</span> <span class="n">u</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">u</span><span class="p">)</span>
+        <span class="n">u</span> <span class="o">=</span> <span class="n">u</span> <span class="o">*</span> <span class="n">angle</span>
+
+    <span class="k">return</span> <span class="n">u</span>
+</code></pre>
+</div>
+</details>
+</div>
+</div>
+<div class="doc doc-object doc-function">
+<h2 class="doc doc-heading" id="pyrotation.rotation_matrix_to_euler_angles_zyx">
+
+<code class="highlight language-python"><span class="n">rotation_matrix_to_euler_angles_zyx</span><span class="p">(</span><span class="n">R</span><span class="p">)</span></code>
+
+
+      </h2>
+<div class="doc doc-contents ">
+<p>Converting a rotation represented by three Euler angles (z-y'-x") to
+rotation matrix represenation.</p>
+<p>CAUTION: Euler angles have a singularity when pitch = pi / 2 or - pi / 2, 
+i.e., gimbal lock. In this case, yaw and roll angles can not be determined
+uniquely, and this function always return a zero yaw angle.</p>
+<details class="quote">
+          <summary>Source code in <code>code_fmkit/pyrotation.py</code></summary>
+          <div class="highlight">
+<pre><span></span><code><span class="k">def</span> <span class="nf">rotation_matrix_to_euler_angles_zyx</span><span class="p">(</span><span class="n">R</span><span class="p">):</span>
+    <span class="sd">'''</span>
+<span class="sd">    Converting a rotation represented by three Euler angles (z-y'-x") to</span>
+<span class="sd">    rotation matrix represenation.</span>
+
+<span class="sd">    CAUTION: Euler angles have a singularity when pitch = pi / 2 or - pi / 2, </span>
+<span class="sd">    i.e., gimbal lock. In this case, yaw and roll angles can not be determined</span>
+<span class="sd">    uniquely, and this function always return a zero yaw angle.</span>
+
+<span class="sd">    '''</span>
+
+    <span class="k">if</span> <span class="n">fabs</span><span class="p">(</span><span class="n">fabs</span><span class="p">(</span><span class="n">R</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">EPSILON</span><span class="p">:</span>
+
+        <span class="c1"># cos(y) != 0, gimbal lock</span>
+
+        <span class="c1"># CAUTION: y is always pi/2, and z is always 0</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="n">copysign</span><span class="p">(</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="n">R</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+
+        <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">z</span> <span class="o">=</span> <span class="n">atan2</span><span class="p">(</span><span class="n">R</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">R</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
+
+        <span class="n">gimbal_lock</span> <span class="o">=</span> <span class="kc">True</span>
+
+        <span class="c1">#print('gimbal lock!!!')</span>
+
+    <span class="k">else</span><span class="p">:</span>
+
+        <span class="c1"># cos(y) == 0, normal situation</span>
+
+        <span class="c1"># CAUTION: y is always in [-pi/2, pi/2]</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="o">-</span><span class="n">asin</span><span class="p">(</span><span class="n">R</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+        <span class="n">cy</span> <span class="o">=</span> <span class="n">cos</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">atan2</span><span class="p">(</span><span class="n">R</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">/</span> <span class="n">cy</span><span class="p">,</span> <span class="n">R</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">/</span> <span class="n">cy</span><span class="p">)</span>
+        <span class="n">z</span> <span class="o">=</span> <span class="n">atan2</span><span class="p">(</span><span class="n">R</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">/</span> <span class="n">cy</span><span class="p">,</span> <span class="n">R</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">/</span> <span class="n">cy</span><span class="p">)</span>
+
+        <span class="n">gimbal_lock</span> <span class="o">=</span> <span class="kc">False</span>
+
+    <span class="k">return</span> <span class="n">z</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">gimbal_lock</span>
+</code></pre>
+</div>
+</details>
+</div>
+</div>
+<div class="doc doc-object doc-function">
+<h2 class="doc doc-heading" id="pyrotation.skew_symmetric_matrix_to_vector">
+
+<code class="highlight language-python"><span class="n">skew_symmetric_matrix_to_vector</span><span class="p">(</span><span class="n">M</span><span class="p">)</span></code>
+
+
+      </h2>
+<div class="doc doc-contents ">
+<p>Return the vector that corresponds to the skew matrix M.</p>
+<p>Assume:</p>
+<div class="highlight">
+<pre><span></span><code>m = [  0, -z,  y ]
+    [  z,  0, -x ]
+    [ -y,  x,  0 ]
+</code></pre>
+</div>
+<p>Then:</p>
+<div class="highlight">
+<pre><span></span><code>v = (x, y, z)
+</code></pre>
+</div>
+<p>CAUTION: this function does not check whether the matrix is really a skew
+symmetric matrix! It assumes the input is correct! The input must be a
+numpy 3-by-3 matrix!</p>
+<details class="quote">
+          <summary>Source code in <code>code_fmkit/pyrotation.py</code></summary>
+          <div class="highlight">
+<pre><span></span><code><span class="k">def</span> <span class="nf">skew_symmetric_matrix_to_vector</span><span class="p">(</span><span class="n">M</span><span class="p">):</span>
+    <span class="sd">'''</span>
+<span class="sd">    Return the vector that corresponds to the skew matrix M.</span>
+
+<span class="sd">    Assume:</span>
+
+<span class="sd">        m = [  0, -z,  y ]</span>
+<span class="sd">            [  z,  0, -x ]</span>
+<span class="sd">            [ -y,  x,  0 ]</span>
+
+<span class="sd">    Then:</span>
+
+<span class="sd">        v = (x, y, z)</span>
+
+
+<span class="sd">    CAUTION: this function does not check whether the matrix is really a skew</span>
+<span class="sd">    symmetric matrix! It assumes the input is correct! The input must be a</span>
+<span class="sd">    numpy 3-by-3 matrix!</span>
+
+<span class="sd">    '''</span>
+
+    <span class="n">x</span> <span class="o">=</span> <span class="n">M</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">M</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+    <span class="n">z</span> <span class="o">=</span> <span class="n">M</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">((</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">))</span>
+</code></pre>
+</div>
+</details>
+</div>
+</div>
+<div class="doc doc-object doc-function">
+<h2 class="doc doc-heading" id="pyrotation.vector_to_skew_symmetric_matrix">
+
+<code class="highlight language-python"><span class="n">vector_to_skew_symmetric_matrix</span><span class="p">(</span><span class="n">v</span><span class="p">)</span></code>
+
+
+      </h2>
+<div class="doc doc-contents ">
+<p>Return the skew matrix M constructed by vector v, i.e.,</p>
+<p>Assume:</p>
+<div class="highlight">
+<pre><span></span><code>v = (x, y, z)
+</code></pre>
+</div>
+<p>Then:</p>
+<div class="highlight">
+<pre><span></span><code>M = [  0, -z,  y ]
+    [  z,  0, -x ]
+    [ -y,  x,  0 ]
+</code></pre>
+</div>
+<details class="quote">
+          <summary>Source code in <code>code_fmkit/pyrotation.py</code></summary>
+          <div class="highlight">
+<pre><span></span><code><span class="k">def</span> <span class="nf">vector_to_skew_symmetric_matrix</span><span class="p">(</span><span class="n">v</span><span class="p">):</span>
+    <span class="sd">'''</span>
+<span class="sd">    Return the skew matrix M constructed by vector v, i.e.,</span>
+
+<span class="sd">    Assume:</span>
+
+<span class="sd">        v = (x, y, z)</span>
+
+<span class="sd">    Then:</span>
+
+<span class="sd">        M = [  0, -z,  y ]</span>
+<span class="sd">            [  z,  0, -x ]</span>
+<span class="sd">            [ -y,  x,  0 ]</span>
+
+<span class="sd">    '''</span>
+
+    <span class="n">x</span> <span class="o">=</span> <span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">v</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">z</span> <span class="o">=</span> <span class="n">v</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+
+    <span class="n">M</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">((</span>
+        <span class="p">(</span>  <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="n">z</span><span class="p">,</span>  <span class="n">y</span> <span class="p">),</span>
+        <span class="p">(</span>  <span class="n">z</span><span class="p">,</span>  <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="n">x</span> <span class="p">),</span>
+        <span class="p">(</span> <span class="o">-</span><span class="n">y</span><span class="p">,</span>  <span class="n">x</span><span class="p">,</span>  <span class="mi">0</span> <span class="p">)</span>
+        <span class="p">))</span>
+
+    <span class="k">return</span> <span class="n">M</span>
+</code></pre>
+</div>
+</details>
+</div>
+</div>
+</div>
+</div>
+</div>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../fmsignal_vis-reference/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                fmsignal_vis
+              </div>
+            </div>
+          </a>
+        
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/vendor.53cc9318.min.js"></script>
+      <script src="../assets/javascripts/bundle.e9c9f54f.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "..",
+          features: [],
+          search: Object.assign({
+            worker: "../assets/javascripts/worker/search.9c0e82ba.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>

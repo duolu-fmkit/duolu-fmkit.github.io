@@ -1,0 +1,1183 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.7">
+    
+    
+      
+        <title>User Manual - Signal - FMKit</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.cb6bc1d0.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.39b8e14a.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+      
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#user-manual-for-signal-manipulation-with-fmkit" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href=".." title="FMKit" class="md-header-nav__button md-logo" aria-label="FMKit">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      <div class="md-header-nav__ellipsis">
+        <div class="md-header-nav__topic">
+          <span class="md-ellipsis">
+            FMKit
+          </span>
+        </div>
+        <div class="md-header-nav__topic">
+          <span class="md-ellipsis">
+            
+              User Manual - Signal
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="FMKit" class="md-nav__button md-logo" aria-label="FMKit">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    FMKit
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../arch/" class="md-nav__link">
+        The FMKit Architecture
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          User Manual - Signal
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        User Manual - Signal
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#requirement" class="md-nav__link">
+    Requirement
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    Installation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#signal-io" class="md-nav__link">
+    Signal I/O
+  </a>
+  
+    <nav class="md-nav" aria-label="Signal I/O">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#preprocessed-signal-io" class="md-nav__link">
+    Preprocessed Signal I/O
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#raw-signal-io" class="md-nav__link">
+    Raw Signal I/O
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#raw-signal-preprocessing" class="md-nav__link">
+    Raw Signal Preprocessing
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#helper-functions-for-demo" class="md-nav__link">
+    Helper Functions For Demo
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#signal-visualization" class="md-nav__link">
+    Signal Visualization
+  </a>
+  
+    <nav class="md-nav" aria-label="Signal Visualization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#visualization-of-one-signal" class="md-nav__link">
+    Visualization of One Signal
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signal-comparison" class="md-nav__link">
+    Signal Comparison
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#trajectory-visualization" class="md-nav__link">
+    Trajectory Visualization
+  </a>
+  
+    <nav class="md-nav" aria-label="Trajectory Visualization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#visualization-of-one-trajectory" class="md-nav__link">
+    Visualization of One Trajectory
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trajectory-comparison" class="md-nav__link">
+    Trajectory Comparison
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trajectory-animation" class="md-nav__link">
+    Trajectory Animation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trajectory-and-hand-geometry-animation" class="md-nav__link">
+    Trajectory and Hand Geometry Animation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#orientation-animation" class="md-nav__link">
+    Orientation Animation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#signal-alignment-and-template" class="md-nav__link">
+    Signal Alignment and Template
+  </a>
+  
+    <nav class="md-nav" aria-label="Signal Alignment and Template">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#signal-alignment-visualization" class="md-nav__link">
+    Signal Alignment Visualization
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#warping-path-visualization" class="md-nav__link">
+    Warping Path Visualization
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#template-visualization" class="md-nav__link">
+    Template Visualization
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#improving-dtw-efficiency" class="md-nav__link">
+    Improving DTW Efficiency
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" >
+      
+      <label class="md-nav__link" for="nav-4">
+        Code Reference
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Code Reference" data-md-level="1">
+        <label class="md-nav__title" for="nav-4">
+          <span class="md-nav__icon md-icon"></span>
+          Code Reference
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fmsignal-reference/" class="md-nav__link">
+        fmsignal
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fmsignal_vis-reference/" class="md-nav__link">
+        fmsignal_vis
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pyrotation-reference/" class="md-nav__link">
+        pyrotation
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#requirement" class="md-nav__link">
+    Requirement
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    Installation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#signal-io" class="md-nav__link">
+    Signal I/O
+  </a>
+  
+    <nav class="md-nav" aria-label="Signal I/O">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#preprocessed-signal-io" class="md-nav__link">
+    Preprocessed Signal I/O
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#raw-signal-io" class="md-nav__link">
+    Raw Signal I/O
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#raw-signal-preprocessing" class="md-nav__link">
+    Raw Signal Preprocessing
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#helper-functions-for-demo" class="md-nav__link">
+    Helper Functions For Demo
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#signal-visualization" class="md-nav__link">
+    Signal Visualization
+  </a>
+  
+    <nav class="md-nav" aria-label="Signal Visualization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#visualization-of-one-signal" class="md-nav__link">
+    Visualization of One Signal
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signal-comparison" class="md-nav__link">
+    Signal Comparison
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#trajectory-visualization" class="md-nav__link">
+    Trajectory Visualization
+  </a>
+  
+    <nav class="md-nav" aria-label="Trajectory Visualization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#visualization-of-one-trajectory" class="md-nav__link">
+    Visualization of One Trajectory
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trajectory-comparison" class="md-nav__link">
+    Trajectory Comparison
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trajectory-animation" class="md-nav__link">
+    Trajectory Animation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trajectory-and-hand-geometry-animation" class="md-nav__link">
+    Trajectory and Hand Geometry Animation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#orientation-animation" class="md-nav__link">
+    Orientation Animation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#signal-alignment-and-template" class="md-nav__link">
+    Signal Alignment and Template
+  </a>
+  
+    <nav class="md-nav" aria-label="Signal Alignment and Template">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#signal-alignment-visualization" class="md-nav__link">
+    Signal Alignment Visualization
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#warping-path-visualization" class="md-nav__link">
+    Warping Path Visualization
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#template-visualization" class="md-nav__link">
+    Template Visualization
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#improving-dtw-efficiency" class="md-nav__link">
+    Improving DTW Efficiency
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="user-manual-for-signal-manipulation-with-fmkit">User Manual for Signal Manipulation with FMKit</h1>
+<p>This user manual demonstrates the basic usage of the FMKit code library on signal manipulation. </p>
+<h2 id="requirement">Requirement</h2>
+<p>The FMKit code library requires the following software packages</p>
+<ul>
+<li>Python 3 (tested with Python 3.6.9)</li>
+<li>NumPy (tested with NumPy 1.19.5)</li>
+<li>Matplotlib (tested with 3.1.2)</li>
+</ul>
+<h2 id="installation">Installation</h2>
+<p>The code and data are released on <a href="https://github.com/duolu/fmkit">GitHub</a>. Please download the code and the data and unzip them to maintain the folowing folder structure. </p>
+<div class="highlight"><pre><span></span><code>workspace_fmkit
+    ├── code_fmkit
+    │   ├── fmsignal.py
+    │   ├── fmsingal_vis.py
+    │   ├── fmsignal_demo.py
+    │   ├── ...(other code)...
+    │   ├── my_code.py
+    │   └── ...
+    └── data_demo
+        ├── glove_pp
+        │   ├── alice_FMKit_0.csv
+        │   ├── alice_FMKit_0.npy
+        │   └── ...
+        ├── glove_raw
+        │   ├── alice_FMKit_0.txt
+        │   └── ...
+        ├── leap_pp
+        │   ├── alice_FMKit_0.csv
+        │   ├── alice_FMKit_0.npy
+        │   └── ...
+        └── leap_raw
+            ├── alice_FMKit_0.txt
+            └── ...
+</code></pre></div>
+<p>All example signals used in this manual are in the "data_demo" folder. These files are packaged in a single zip file on the GitHub repository and they must be unzipped in this folder structure.</p>
+<p>The following three python modules are demonstrated in this tutorial.</p>
+<ul>
+<li><a href="../fmsignal-reference/">fmsignal.py</a> - signal representation, preprocessing, and manipulation. </li>
+<li><a href="../fmsignal_vis-reference/">fmsignal_vis.py</a> - signal visualization</li>
+<li><a href="fmsignal_demo-reference.md">fmsignal_demo.py</a> - demonstration for this tutorial.</li>
+</ul>
+<p>To use this code library, please download the Python modules under the "code_fmkit" folder and incorporate into your project. A simple way to try the code in this manual is creating a file "my_code.py" under the folder "code_fmkit", import everything as follows, and run it.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">fmsignal</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">fmsignal_vis</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">fmsignal_demo</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="c1"># Put the demo code in this manual here.</span>
+</code></pre></div>
+<p>Note that the signal files for the same user writing the same content have the same file names, regardless of the data capture devices or whether they are raw signals or preprocessed signals. They are only differentiated by the folders, and hence, maintaining the correct folder structure is important for the demo.</p>
+<h2 id="signal-io">Signal I/O</h2>
+<p>This section demonstrates preprocessed signal input/output, raw signal input/ouput, and raw signal preprocessing.</p>
+<h3 id="preprocessed-signal-io">Preprocessed Signal I/O</h3>
+<p>A preprocessed signal can be constructed from a file as follows.
+<div class="highlight"><pre><span></span><code><span class="n">fn</span> <span class="o">=</span> <span class="s1">&#39;../date_demo/leap_pp/alice_FMKit_0&#39;</span>
+<span class="n">signal</span> <span class="o">=</span> <span class="n">FMSignal</span><span class="o">.</span><span class="n">construct_from_file</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;csv&#39;</span><span class="p">)</span>
+</code></pre></div>
+This load the file "alice_FMKit_0.csv" under the folder "date_demo/leap_pp".</p>
+<p>A signal can also be constructed using a different file format as follows.
+<div class="highlight"><pre><span></span><code><span class="n">fn</span> <span class="o">=</span> <span class="s1">&#39;../date_demo/leap_pp/alice_FMKit_0&#39;</span>
+<span class="n">signal</span> <span class="o">=</span> <span class="n">FMSignal</span><span class="o">.</span><span class="n">construct_from_file</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;npy&#39;</span><span class="p">)</span>
+</code></pre></div>
+This load the file "alice_FMKit_0.npy" under the folder "date_demo/leap_pp".</p>
+<p>These two signals are identical in memory. These files can have two different "mode", i.e., "csv" for the Comma Separated Value format, and "npy" for the NumPy binary format. The "csv" format is human readable and programming language agnostic, while the "npy" format is only designed to work with Python and NumPy. Loading the files in the "npy" format is in general faster than those in the "csv" format. Note that the file name does not need to specify the ".csv" or ".npy" extension. They are attached automatically by specify the "mode".</p>
+<p>A signal has the three attributes "user", "cid", and "seq" to indicate the user who create this signal, the content ID, and the sequence number. They can be set when a signal is constructed from a file as follows.
+<div class="highlight"><pre><span></span><code><span class="n">fn</span> <span class="o">=</span> <span class="s1">&#39;../date_demo/leap_pp/alice_FMKit_0&#39;</span>
+<span class="n">signal</span> <span class="o">=</span> <span class="n">FMSignal</span><span class="o">.</span><span class="n">construct_from_file</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;csv&#39;</span><span class="p">,</span> <span class="n">user</span><span class="o">=</span><span class="s1">&#39;alice&#39;</span><span class="p">,</span> <span class="n">cid</span><span class="o">=</span><span class="s1">&#39;FMKit&#39;</span><span class="p">,</span> <span class="n">seq</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</code></pre></div>
+If these attributes are not specified at loading, by default, "user" is an empty string, "cid" is also an empty string, and "seq" is zero.</p>
+<p>A signal can also be saved to a file as follows.
+<div class="highlight"><pre><span></span><code><span class="n">fn</span> <span class="o">=</span> <span class="s1">&#39;../date_demo/leap_pp/temp/alice_FMKit_0&#39;</span>
+<span class="n">signal</span><span class="o">.</span><span class="n">save_to_file</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;csv&#39;</span><span class="p">)</span>
+</code></pre></div>
+This creates the file "alice_FMKit_0.csv" containing the signal data under the folder "date_demo/leap_pp/temp".</p>
+<p>A signal can also be saved using a different file format as follows.
+<div class="highlight"><pre><span></span><code><span class="n">fn</span> <span class="o">=</span> <span class="s1">&#39;../date_demo/leap_pp/temp/alice_FMKit_0&#39;</span>
+<span class="n">signal</span><span class="o">.</span><span class="n">save_to_file</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;npy&#39;</span><span class="p">)</span>
+</code></pre></div>
+This creates the file "alice_FMKit_0.csv" containing the signal data under the folder "date_demo/leap_pp/temp".</p>
+<p>The signals are writtent to the folder "date_demo/leap_pp/temp" to avoid overwriting the original signal files. Note that the file name does not need to specify the ".csv" or ".npy" extension. They are attached automatically by specify the "mode".</p>
+<p>As explained in "<a href="../arch/#in-air-handwriting-signal">The FMKit Architecture</a>" document, preprocessed signals are device agnostic and they have a unified format. Although the previous demo only shows those signals generated using the Leap Motion controller device, they can be easily modified to show those signals generated using the data glove device, as follows.
+<div class="highlight"><pre><span></span><code><span class="n">fn_load</span> <span class="o">=</span> <span class="s1">&#39;../date_demo/glove_pp/alice_FMKit_0&#39;</span>
+<span class="n">signal</span> <span class="o">=</span> <span class="n">FMSignal</span><span class="o">.</span><span class="n">construct_from_file</span><span class="p">(</span><span class="n">fn_load</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;csv&#39;</span><span class="p">)</span>
+<span class="n">fn_save</span> <span class="o">=</span> <span class="s1">&#39;../date_demo/glove_pp/temp/alice_FMKit_0&#39;</span>
+<span class="n">signal</span><span class="o">.</span><span class="n">save_to_file</span><span class="p">(</span><span class="n">fn_save</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;npy&#39;</span><span class="p">)</span>
+</code></pre></div>
+This loads the file "alice_FMKit_0.csv" under the folder "date_demo/glove_pp" and saves it to the file "alice_FMKit_0.npy" under the folder "date_demo/glove_pp/temp"</p>
+<h3 id="raw-signal-io">Raw Signal I/O</h3>
+<p>A raw signal generated using the Leap Motion controller can also be constructed in a similar way as preprocessed signals.
+<div class="highlight"><pre><span></span><code><span class="n">fn</span> <span class="o">=</span> <span class="s1">&#39;../date_demo/leap_raw/alice_FMKit_0&#39;</span>
+<span class="n">raw_signal_leap</span> <span class="o">=</span> <span class="n">FMSignalLeap</span><span class="o">.</span><span class="n">construct_from_file</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;raw_csv&#39;</span><span class="p">)</span>
+</code></pre></div>
+This load the file "alice_FMKit_0.csv" under the folder "date_demo/leap_raw". </p>
+<p>Similarly, a raw signal generated using the Leap Motion controller can also be constructed using a different file format as follows.
+<div class="highlight"><pre><span></span><code><span class="n">fn</span> <span class="o">=</span> <span class="s1">&#39;../date_demo/leap_raw/alice_FMKit_0&#39;</span>
+<span class="n">raw_signal_leap</span> <span class="o">=</span> <span class="n">FMSignalLeap</span><span class="o">.</span><span class="n">construct_from_file</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;raw_npy&#39;</span><span class="p">)</span>
+</code></pre></div>
+This load the file "alice_FMKit_0.npy" under the folder "date_demo/leap_raw". </p>
+<p>Note that the two file "modes" are "raw_csv" and "raw_npy" but the actual file extensions are just ".csv" and ".npy". This is intentional to avoid mistakes of using raw signals as preprocessed signals. The file extensions are attached automatically, similar to the preprocessed signals.</p>
+<p>Besides these two formats, there is another "mode" named "raw_internal", which has the file extension ".txt". Files in this format are generated directly by our client software. There are several versions of the format with small variations, which complicates the code. Hence, they are generally only for internal usage. All released datasets only contains ".csv" or ".npy" files. Still, a raw signal generated using the Leap Motion controller can be constructed using the "raw_internal" mode as follows.
+<div class="highlight"><pre><span></span><code><span class="n">fn</span> <span class="o">=</span> <span class="s1">&#39;../date_demo/leap_raw/alice_FMKit_0&#39;</span>
+<span class="n">raw_signal_leap</span> <span class="o">=</span> <span class="n">FMSignalLeap</span><span class="o">.</span><span class="n">construct_from_file</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;raw_interal&#39;</span><span class="p">)</span>
+</code></pre></div>
+This load the file "alice_FMKit_0.txt" under the folder "date_demo/leap_raw".</p>
+<p>These signals are identical in memory. They are only different in the formats when saved in files.</p>
+<p>A raw signal generated using the Leap Motion controller can be saved to a file as follows.
+<div class="highlight"><pre><span></span><code><span class="n">fn</span> <span class="o">=</span> <span class="s1">&#39;../date_demo/leap_raw/temp/alice_FMKit_0&#39;</span>
+<span class="n">raw_signal_leap</span><span class="o">.</span><span class="n">save_to_file</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;raw_csv&#39;</span><span class="p">)</span>
+</code></pre></div>
+This creates the file "alice_FMKit_0.csv" containing the signal data under the folder "date_demo/leap_raw/temp".</p>
+<p>A raw signal generated using the Leap Motion controller can also be saved using a different file format as follows.
+<div class="highlight"><pre><span></span><code><span class="n">fn</span> <span class="o">=</span> <span class="s1">&#39;../date_demo/leap_raw/temp/alice_FMKit_0&#39;</span>
+<span class="n">raw_signal_leap</span><span class="o">.</span><span class="n">save_to_file</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;raw_npy&#39;</span><span class="p">)</span>
+</code></pre></div>
+This creates the file "alice_FMKit_0.csv" containing the signal data under the folder "date_demo/leap_raw/temp".</p>
+<p>Note that a raw signal cannot be saved in the "raw_internal" format.</p>
+<p>Besides the Leap Motion controller, raw signals can also generated using our data glove device. This kind of signals can be load in a similar way as follows
+<div class="highlight"><pre><span></span><code><span class="n">fn</span> <span class="o">=</span> <span class="s1">&#39;../date_demo/glove_raw/alice_FMKit_0&#39;</span>
+<span class="n">raw_signal_glove</span> <span class="o">=</span> <span class="n">FMSignalGlove</span><span class="o">.</span><span class="n">construct_from_file</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;raw_interal&#39;</span><span class="p">)</span>
+</code></pre></div>
+This load the file "alice_FMKit_0.txt" under the folder "date_demo/glove_raw". The "mode" can be "raw_csv", "raw_npy", or "raw_internal", which is the same as the signals generated by the Leap Motion controller.</p>
+<p>Similarly, they can be saved to files as follows.
+<div class="highlight"><pre><span></span><code><span class="n">fn</span> <span class="o">=</span> <span class="s1">&#39;../date_demo/glove_raw/temp/alice_FMKit_0&#39;</span>
+<span class="n">raw_signal_glove</span><span class="o">.</span><span class="n">save_to_file</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;raw_csv&#39;</span><span class="p">)</span>
+</code></pre></div>
+This creates the file "alice_FMKit_0.csv" containing the signal data under the folder "date_demo/glove_raw/temp". The "mode" can also be "raw_npy".</p>
+<h3 id="raw-signal-preprocessing">Raw Signal Preprocessing</h3>
+<p>Although the raw signals from two different devices are fundamentally different, both types of signals can be preprocessed to generate the signals in the same format, as explained in "<a href="../arch/#in-air-handwriting-signal">The FMKit Architecture</a>" document. </p>
+<p>A raw signal obtained using the Leap Motion controller device can be preprocessed as follows.
+<div class="highlight"><pre><span></span><code><span class="n">signal_leap_pp</span> <span class="o">=</span> <span class="n">raw_signal_leap</span><span class="o">.</span><span class="n">preprocess</span><span class="p">(</span><span class="n">point</span><span class="o">=</span><span class="s1">&#39;tip&#39;</span><span class="p">)</span>
+</code></pre></div>
+Here the "point" parameter indicates which point on the hand is used, either the tip of the index finger (i.e., "tip") or the center of the hand (i.e., "center"). After preprocessing, a new signal is returned, and the original raw signal is also modified.</p>
+<p>For a raw signal obtained using the data glove, the preprocessing is similar as follows.
+A raw signal obtained using the Leap Motion controller device can be preprocessed as follows.
+<div class="highlight"><pre><span></span><code><span class="n">signal_glove_pp</span> <span class="o">=</span> <span class="n">raw_signal_glove</span><span class="o">.</span><span class="n">preprocess</span><span class="p">(</span><span class="n">point</span><span class="o">=</span><span class="s1">&#39;tip&#39;</span><span class="p">)</span>
+</code></pre></div>
+Here the "point" parameter has the same meaning and it can be either "tip" or "center".</p>
+<p>Currently, the only usage of a raw signal (i.e., an instance of <a href="../fmsignal-reference/#fmsignal.FMSignalLeap">FMSignalLeap</a> or <a href="../fmsignal-reference/#fmsignal.FMSignalGlove">FMSignalGlove</a>) is to run the preprocessing procedure to obtain a preprocessed signal (i.e, an instance of <a href="../fmsignal-reference/#fmsignal.FMSignal">FMSignal</a>). There are other parameters can be set to control the behavior of the preprocessing procedure. See the code reference (<a href="../fmsignal-reference/#fmsignal.FMSignalLeap.preprocess">FMSignalLeap.preprocess()</a> or <a href="../fmsignal-reference/#fmsignal.FMSignalGlove.preprocess">FMSignalGlove.preprocess()</a>) for further details.</p>
+<h3 id="helper-functions-for-demo">Helper Functions For Demo</h3>
+<p>Since signal I/O is frequently used in the demo, a few helper functions are provided to make the demo code short and succinct. These helper functions are defined in the "<a href="fmsignal_demo-reference.md">fmsignal_demo.py</a>". They also assume the file name has the format of "user_cid_seq.csv" or "user_cid_seq.npy", and the folder structures has the format specified at the beginning of this tutorial. </p>
+<p>The following global variables are defined for convenience, and they are used to specify the default values for the parameters of these helper functions.
+<div class="highlight"><pre><span></span><code><span class="n">FOLDER</span> <span class="o">=</span> <span class="s1">&#39;../data_demo&#39;</span>
+<span class="n">USER</span> <span class="o">=</span> <span class="s2">&quot;alice&quot;</span>
+<span class="c1">#USER = &quot;bob&quot;</span>
+<span class="n">CID</span> <span class="o">=</span> <span class="s1">&#39;FMKit&#39;</span>
+<span class="c1">#CID = &#39;123456&#39;</span>
+<span class="n">PP_MODE_LOAD</span> <span class="o">=</span> <span class="s1">&#39;npy&#39;</span>
+<span class="n">PP_MODE_SAVE</span> <span class="o">=</span> <span class="s1">&#39;npy&#39;</span>
+<span class="n">RAW_MODE_LOAD</span> <span class="o">=</span> <span class="s1">&#39;raw_internal&#39;</span>
+<span class="n">RAW_MODE_SAVE</span> <span class="o">=</span> <span class="s1">&#39;raw_npy&#39;</span>
+
+<span class="n">LEAP_PP_SUBFOLDER</span> <span class="o">=</span> <span class="s1">&#39;leap_pp&#39;</span>
+<span class="n">GLOVE_PP_SUBFOLDER</span> <span class="o">=</span> <span class="s1">&#39;glove_pp&#39;</span>
+<span class="n">LEAP_TEMPLATE_SUBFOLDER</span> <span class="o">=</span> <span class="s1">&#39;leap_template&#39;</span>
+<span class="n">GLOVE_TEMPLATE_SUBFOLDER</span> <span class="o">=</span> <span class="s1">&#39;glove_template&#39;</span>
+<span class="n">LEAP_RAW_SUBFOLDER</span> <span class="o">=</span> <span class="s1">&#39;leap_raw&#39;</span>
+<span class="n">GLOVE_RAW_SUBFOLDER</span> <span class="o">=</span> <span class="s1">&#39;glove_raw&#39;</span>
+
+<span class="n">DEVICE</span> <span class="o">=</span> <span class="s1">&#39;leap&#39;</span>
+<span class="c1">#DEVICE = &#39;glove&#39;</span>
+</code></pre></div></p>
+<p>A single preprocessed signal for demo can be loaded as follows.
+<div class="highlight"><pre><span></span><code><span class="n">signal</span> <span class="o">=</span> <span class="n">load_one_demo_signal_pp</span><span class="p">()</span>
+</code></pre></div>
+This loads the file "alice_FMKit_0.npy" from the folder "date_demo/leap_pp" or "date_demo/glove_pp" depending on the "device" parameter, which can be either "leap" or "glove".</p>
+<p>A specific signal can be loaded by setting the parameter to something different from the default values as follows.
+<div class="highlight"><pre><span></span><code><span class="n">signal</span> <span class="o">=</span> <span class="n">load_one_demo_signal_pp</span><span class="p">(</span><span class="n">device</span><span class="o">=</span><span class="s1">&#39;glove&#39;</span><span class="p">,</span> <span class="n">user</span><span class="o">=</span><span class="s1">&#39;bob&#39;</span><span class="p">,</span> <span class="n">cid</span><span class="o">=</span><span class="s1">&#39;123456&#39;</span><span class="p">,</span> <span class="n">seq</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;csv&#39;</span><span class="p">)</span>
+</code></pre></div>
+This loads the file "bob_123456_5.csv" from the folder "data_demo/glove_pp". By default, the "device" is "leap", the "user" parameter is "alice", the "cid" parameter is "FMKit", the "seq" parameter is 0, the "mode" parameter is "npy". This function constructs the file name according to these parameters.</p>
+<p>A collection of signals for demo can be loaded as follows.
+<div class="highlight"><pre><span></span><code><span class="n">signals</span> <span class="o">=</span> <span class="n">load_demo_signals_pp</span><span class="p">()</span>
+</code></pre></div>
+This loads ten files, from "alice_FMKit_0.npy" to "alice_FMKit_9.npy", all in the folder "data_demo/leap_pp", and it returns a list of ten signals.</p>
+<p>A specific collection of signals can be loaded by setting the parameters to something different from the default values as follows.
+<div class="highlight"><pre><span></span><code><span class="n">signals</span> <span class="o">=</span> <span class="n">load_demo_signals_pp</span><span class="p">(</span><span class="n">device</span><span class="o">=</span><span class="s1">&#39;glove&#39;</span><span class="p">,</span> <span class="n">user</span><span class="o">=</span><span class="s1">&#39;bob&#39;</span><span class="p">,</span> <span class="n">cid</span><span class="o">=</span><span class="s1">&#39;123456&#39;</span><span class="p">,</span> <span class="n">sequences</span><span class="o">=</span><span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;csv&#39;</span><span class="p">)</span>
+</code></pre></div>
+This loads two files, i.e., "bob_123456_5.csv" and "bob_123456_6.csv", all in the folder "data_demo/glove_pp", and returns a list of two signals.</p>
+<p>A signal can be saved at a certain place as follows.
+<div class="highlight"><pre><span></span><code><span class="n">save_one_demo_signal_pp</span><span class="p">(</span><span class="n">signal</span><span class="p">)</span>
+</code></pre></div>
+This save the signal in the folder "data_demo/leap_pp/temp" and it automatically generates the file name as "user_cid_seq.csv" using the signal attributes. The parameter "device" can be specified to change the target folder. Note that this function can not distinguish the signals from different devices. Users are required to pay attention to save the signal at the correct folder. For example, if the signal is obtained from the data glove device, use <code>save_one_demo_signal_pp(signal, device='glove')</code> instead.</p>
+<p>A collection of signals can be saved at a certain place as follows.
+<div class="highlight"><pre><span></span><code><span class="n">save_demo_signals_pp</span><span class="p">(</span><span class="n">signals</span><span class="p">)</span>
+</code></pre></div>
+This saves each signal in the folder "data_demo/leap_pp/temp" and it automatically generates the file name for each signal. The parameter "device" can be specified to change the target folder.</p>
+<p>For raw signal I/O, there are similar helper functions as follows.
+<div class="highlight"><pre><span></span><code><span class="n">signal_raw</span> <span class="o">=</span> <span class="n">load_one_demo_signal_raw</span><span class="p">()</span>
+</code></pre></div>
+This loads the file "alice_FMKit_0.txt" from the folder "date_demo/leap_raw". The parameter "device" can be specified to change the folder accordingly. By default it uses the "raw_internal" mode.</p>
+<p><div class="highlight"><pre><span></span><code><span class="n">signals_raw</span> <span class="o">=</span> <span class="n">load_demo_signals_raw</span><span class="p">()</span>
+</code></pre></div>
+This loads ten files, from "alice_FMKit_0.txt" to "alice_FMKit_9.txt", all in the folder "date_demo/leap_raw", and returns a list of ten signals. </p>
+<p><div class="highlight"><pre><span></span><code><span class="n">save_one_demo_signal_raw</span><span class="p">(</span><span class="n">signal</span><span class="p">)</span>
+</code></pre></div>
+This save the signal in the folder "data_demo/leap_pp/temp" and it automatically generates the file name as "user_cid_seq.csv" using the signal attributes. The parameter "device" can be specified to change the folder accordingly.</p>
+<p>A collection of signals can be saved at a certain place as follows.
+<div class="highlight"><pre><span></span><code><span class="n">save_demo_signals_raw</span><span class="p">(</span><span class="n">signals</span><span class="p">)</span>
+</code></pre></div>
+This saves each signal in the folder "data_demo/leap_pp/temp" and it automatically generates the file name for each signal. The parameter "device" can be specified to change the folder accordingly.</p>
+<p>Note that different signals from different devices are only distinguished by the corresponding folders. Similarly, preprocessed signals and raw signals are only distinguished by the corresponding folders. Users need to pay attention to specify the correct folder when loading and saving signals. </p>
+<h2 id="signal-visualization">Signal Visualization</h2>
+<p>This section demonstrates visualization of preprocessed signals. All functions related to visualization are provided in the "<a href="../fmsignal_vis-reference/">fmsignal_vis.py</a>" module. Note that only preprocessed signals can be visualized using these methods (raw signals do not follow the format of 18 sensor axes, and hence, they cannot be visualized in this way). Also, preprocessed signals are sensor agnostic, i.e., the visualization functions does care whether they are obtained from raw signals obtain by the Leap Motion controller device or the data glove device. </p>
+<h3 id="visualization-of-one-signal">Visualization of One Signal</h3>
+<p>A signal can be visualized as follows.
+<div class="highlight"><pre><span></span><code><span class="n">signal</span> <span class="o">=</span> <span class="n">load_one_demo_signal_pp</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+<span class="n">signal_vis</span><span class="p">(</span><span class="n">signal</span><span class="p">)</span>
+</code></pre></div>
+This plots the signal data for all 18 sensor axes, as shown in the following figure.</p>
+<p><img alt="Signal visualization." src="../pics/signal_vis.png" /></p>
+<p>The edges of each plot are colored to indicate the sensor axes groups as follows.</p>
+<ul>
+<li>black - position</li>
+<li>red - velocity</li>
+<li>green - linear acceleration</li>
+<li>blue - orientation</li>
+<li>cyan - angular speed</li>
+<li>magenta - angular acceleration</li>
+</ul>
+<p>Within each color group, the three axes are in the order x-y-z.</p>
+<p>If there is no need to plot all sensor axes, a subset can be visualized as follows.
+<div class="highlight"><pre><span></span><code><span class="n">signal</span> <span class="o">=</span> <span class="n">load_one_demo_signal_pp</span><span class="p">(</span><span class="n">device</span><span class="o">=</span><span class="s1">&#39;leap&#39;</span><span class="p">)</span>
+<span class="n">signal_vis</span><span class="p">(</span><span class="n">signal</span><span class="p">,</span> <span class="n">start_col</span><span class="o">=</span><span class="mi">9</span><span class="p">,</span> <span class="n">nr_cols</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+</code></pre></div>
+This only plots the three axes of orientation, as shown in the following figure.</p>
+<p><img alt="Signal visualization with selected axes." src="../pics/signal_vis_with_selected_axes.png" /></p>
+<p>The "start_col" means the starting index of the sensor axis (i.e., columns). Note that both "start_col" and "nr_cols" must be multiples of three, i.e., the plot always bundles three axes of one specific type of physical states in the x-y-z directions together. The plot is also colored accordingly.</p>
+<p>The signal data for all sensor axes can also be visualized in a compact way as follows.
+<div class="highlight"><pre><span></span><code><span class="n">signal</span> <span class="o">=</span> <span class="n">load_one_demo_signal_pp</span><span class="p">(</span><span class="n">device</span><span class="o">=</span><span class="s1">&#39;leap&#39;</span><span class="p">)</span>
+<span class="n">signal_vis_compact</span><span class="p">(</span><span class="n">signal</span><span class="p">)</span>
+</code></pre></div>
+This plots the signal data in bundles of three axes, as shown in the following figure.</p>
+<p><img alt="Signal visualization in a compact way." src="../pics/signal_vis_compact.png" /></p>
+<p>The edges of each plot are colored accordingly. Within a plot, the RGB colors of the lines map to the sensor axes x-y-z.</p>
+<h3 id="signal-comparison">Signal Comparison</h3>
+<p>Two signals can be visualized in the same plot for comparison as follows.
+<div class="highlight"><pre><span></span><code><span class="n">signal_0</span> <span class="o">=</span> <span class="n">load_one_demo_signal_pp</span><span class="p">(</span><span class="n">device</span><span class="o">=</span><span class="s1">&#39;leap&#39;</span><span class="p">,</span> <span class="n">seq</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">signal_1</span> <span class="o">=</span> <span class="n">load_one_demo_signal_pp</span><span class="p">(</span><span class="n">device</span><span class="o">=</span><span class="s1">&#39;leap&#39;</span><span class="p">,</span> <span class="n">seq</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">signal_vis_comparison</span><span class="p">([</span><span class="n">signal_0</span><span class="p">,</span> <span class="n">signal_1</span><span class="p">],</span> <span class="n">start_col</span><span class="o">=</span><span class="mi">9</span><span class="p">,</span> <span class="n">nr_cols</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+</code></pre></div>
+This compares the data of two signals in the orientation axes. The result is shown in the following figure.</p>
+<p><img alt="Signal comparison." src="../pics/signal_vis_comparison.png" /></p>
+<p>Here, the blue lines are the "signal_0" and the orange lines are the "signal_1". Since they are generated by the same person (i.e., "alice") writing the same content (i.e., "FMKit"), the two signals are similar in the visualized sensor axes. The plot is also colored according to the sensor axes groups.</p>
+<p>Similarly, multiple signals can be compared together as follows.
+<div class="highlight"><pre><span></span><code><span class="n">signals</span> <span class="o">=</span> <span class="n">load_demo_signals_pp</span><span class="p">(</span><span class="n">device</span><span class="o">=</span><span class="s1">&#39;leap&#39;</span><span class="p">)</span>
+<span class="n">signal_vis_comparison</span><span class="p">(</span><span class="n">signals</span><span class="p">,</span> <span class="n">start_col</span><span class="o">=</span><span class="mi">9</span><span class="p">,</span> <span class="n">nr_cols</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+</code></pre></div>
+This compares ten signals in the orientation axes. The result is shown in the following figure.</p>
+<p><img alt="Comparison of ten signals." src="../pics/signal_vis_comparison_ten_signals.png" /></p>
+<p>Here, each signal has its own color. They are also generated by the same person (i.e., "alice") writing the same content (i.e., "FMKit"). This plot shows the inherent "fuzziness" in the in-air-handwriting, i.e., even if the same person write the same content multiple times, there are variations in the writing speed and intensity of each stroke. Hence, alignment is needed (see the section "<a href="tutorial_signal.md#signal-alignment-and-template">Signal Alignment and Template</a>")</p>
+<h2 id="trajectory-visualization">Trajectory Visualization</h2>
+<p>This section demonstrates visualization of trajectories for preprocessed signals. This function works for both devices. It also works for both raw signals and preprocessed signals. However, the trajectory of a signal obtained by the data glove device is generally illegible.</p>
+<h3 id="visualization-of-one-trajectory">Visualization of One Trajectory</h3>
+<p>The trajectory of one signal can be visualized as follows.
+<div class="highlight"><pre><span></span><code><span class="n">signal</span> <span class="o">=</span> <span class="n">load_one_demo_signal_pp</span><span class="p">(</span><span class="n">device</span><span class="o">=</span><span class="s1">&#39;leap&#39;</span><span class="p">)</span>
+<span class="n">trajectory_vis</span><span class="p">(</span><span class="n">signal</span><span class="p">)</span>
+</code></pre></div>
+This shows the trajectory of a point on the hand (either "tip" or "center", depending on the preprocessing). The result is shown in the following figure.</p>
+<p><img alt="Trajectory visualization of a signal in 3D (Leap Motion device)." src="../pics/trajectory_vis_leap.gif" /></p>
+<p>The view angles are kept moving intentionally to show the 3D structure in this figure. This signal is obtained by the user "alice" writing the string "FMKit" using the Leap Motion controller device. Note that this user intentionally wrote it in a legible way to facilitate this visualization. Also, the Leap Motion controller device directly records the 3D position of the joints on the hand with an infrared stereo camera.</p>
+<p>The orientation of the finger can also be shown together with the trajectory as follows.
+<div class="highlight"><pre><span></span><code><span class="n">signal</span> <span class="o">=</span> <span class="n">load_one_demo_signal_pp</span><span class="p">(</span><span class="n">device</span><span class="o">=</span><span class="s1">&#39;leap&#39;</span><span class="p">)</span>
+<span class="n">trajectory_vis</span><span class="p">(</span><span class="n">signal</span><span class="p">,</span> <span class="n">show_local_axes</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">interval</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+</code></pre></div>
+The result is shown in the following figure.</p>
+<p><img alt="Trajectory visualization of a signal in 3D with local axes (Leap Motion device)." src="../pics/trajectory_vis_leap_axes.gif" /></p>
+<p>The line segments indicates the axes of the local finger orientation where the RGB colors correspond to x-y-z. The "interval=10" parameter means for every 10 samples of the time series, the local axes are plot once.</p>
+<h3 id="trajectory-comparison">Trajectory Comparison</h3>
+<p>Two trajectories from two signals can be visualized together for comparison as follows.
+<div class="highlight"><pre><span></span><code><span class="n">signal_0</span> <span class="o">=</span> <span class="n">load_one_demo_signal_pp</span><span class="p">(</span><span class="n">device</span><span class="o">=</span><span class="s1">&#39;leap&#39;</span><span class="p">,</span> <span class="n">seq</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">signal_1</span> <span class="o">=</span> <span class="n">load_one_demo_signal_pp</span><span class="p">(</span><span class="n">device</span><span class="o">=</span><span class="s1">&#39;leap&#39;</span><span class="p">,</span> <span class="n">seq</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">trajectorie_vis_comparison</span><span class="p">([</span><span class="n">signal_0</span><span class="p">,</span> <span class="n">signal_1</span><span class="p">])</span>
+</code></pre></div>
+The result is shown in the following figure.</p>
+<p><img alt="Trajectory comparison." src="../pics/trajectory_vis_comparison.gif" /></p>
+<p>Since these two signals are generated by the same person (i.e., "alice") writing the same content (i.e., "FMKit"), the trajectories are close to each other.</p>
+<p>Similarly, more trajectories can be visualized together as follows.
+<div class="highlight"><pre><span></span><code><span class="n">signals</span> <span class="o">=</span> <span class="n">load_demo_signals_pp</span><span class="p">(</span><span class="n">device</span><span class="o">=</span><span class="s1">&#39;leap&#39;</span><span class="p">)</span>
+<span class="n">trajectorie_vis_comparison</span><span class="p">(</span><span class="n">signals</span><span class="p">)</span>
+</code></pre></div>
+The result is shown in the following figure.</p>
+<p><img alt="Trajectory comparison with 10 signals." src="../pics/trajectory_vis_comparison_ten_signals.gif" /></p>
+<p>Each trajectory has its own color. Since they are all generated by the same person (i.e., "alice") writing the same content (i.e., "FMKit"), the trajectories are all similar in shape. Note that the preprocessing procedure normalize the pose of the in-air-handwriting, and hence, the relative pose between the in-air-handwriting and the sensor does not matter.</p>
+<h3 id="trajectory-animation">Trajectory Animation</h3>
+<p>As the in-air-handwriting signal is a time series of physical states of the hand, the process of generating the trajectory can be reproduced using the signal data as follows.
+<div class="highlight"><pre><span></span><code><span class="n">signal</span> <span class="o">=</span> <span class="n">load_one_demo_signal_pp</span><span class="p">(</span><span class="n">device</span><span class="o">=</span><span class="s1">&#39;leap&#39;</span><span class="p">)</span>
+<span class="n">trajectory_animation</span><span class="p">(</span><span class="n">signal</span><span class="p">,</span> <span class="n">seg_length</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+</code></pre></div>
+This generates the following animation.</p>
+<p><img alt="Trajectory animation." src="../pics/trajectory_animation.gif" /></p>
+<p>Essentially, this function plot the trajectory of a signal segment in a sliding-forward window. The parameter "seg_length" controls the length of the signal segment. If it is less or equal to zero, the whole signal is plotted (by default it is zero). This is designed to facilitate the visual confirmation of the signal content for those users who write all letters in the same place.</p>
+<h3 id="trajectory-and-hand-geometry-animation">Trajectory and Hand Geometry Animation</h3>
+<p>If a signal is obtained using the Leap Motion controller device, the raw signal contains the position of each joint on the hand, and the hand geometry can be animated together with the trajectory as follows.
+<div class="highlight"><pre><span></span><code><span class="n">raw_signal</span> <span class="o">=</span> <span class="n">load_one_demo_signal_raw</span><span class="p">(</span><span class="n">device</span><span class="o">=</span><span class="s1">&#39;leap&#39;</span><span class="p">)</span>
+<span class="n">raw_signal</span><span class="o">.</span><span class="n">preprocess</span><span class="p">(</span><span class="n">point</span><span class="o">=</span><span class="s1">&#39;tip&#39;</span><span class="p">)</span>
+<span class="n">trajectory_animation</span><span class="p">(</span><span class="n">raw_signal</span><span class="p">,</span> <span class="n">seg_length</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+</code></pre></div>
+Note that the raw signal still needs preprocessing for pose normalization and filtering (which is essential to generate the "trajectory" attribute and the "joints" attribute). The hand geometry plot works only for raw signals from the Leap Motion controller device. It does not work for preprocessed signals or raw signals from the data glove (because they do not have the "joints" attribute). This generates the following animation.</p>
+<p><img alt="Trajectory animation with Hand geometry." src="../pics/trajectory_animation_hand.gif" /></p>
+<p>This plots the position of the joints for each data sample at a time and make an animation.</p>
+<h3 id="orientation-animation">Orientation Animation</h3>
+<p>Since the data glove device can only obtain angular speed and linear acceleration directly, the trajectory of a signal obtained by the data glove device is derived indirectly (usually with some regularization to prevent the unbounded accumulation of errors in the dead reckoning procedure). This trajectory does not represent the actual trajectory of the hand, and this usually means that the visualization of such a "trajectory" is usually not legible.</p>
+<p>To check the signals from the data glove in a human understandable way, the orientation can be animated as follows.
+<div class="highlight"><pre><span></span><code><span class="n">raw_signal</span> <span class="o">=</span> <span class="n">load_one_demo_signal_raw</span><span class="p">(</span><span class="n">device</span><span class="o">=</span><span class="s1">&#39;glove&#39;</span><span class="p">,</span> <span class="n">cid</span><span class="o">=</span><span class="s1">&#39;123456&#39;</span><span class="p">)</span>
+<span class="n">raw_signal</span><span class="o">.</span><span class="n">preprocess</span><span class="p">(</span><span class="n">point</span><span class="o">=</span><span class="s1">&#39;tip&#39;</span><span class="p">)</span>
+<span class="n">orientation_animation</span><span class="p">(</span><span class="n">raw_signal</span><span class="p">,</span> <span class="n">seg_length</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+</code></pre></div>
+The result is shown as follows.</p>
+<p><img alt="Orientation animation with a signal from the data glove device." src="../pics/orientation_animation.gif" /></p>
+<p>This plots the x-y-z axes of each sample in an animation to show the orientation of the point on the hand. The animation also plots the trajectory of the end point of the x-axis. The signal is obtained by the user "alice" writing the string "123456". Clearly a person can visually confirm the writing content is "123456" with this animation. However, not every user write strings in this way. Some user will maintain the pointing direction of the finger while moving the arm as a whole in the air to write like on an invisible wall.</p>
+<p>Although it is designed mainly for signals obtained from the data glove device, this function works for both devices. It also works for both raw signals and preprocessed signals.</p>
+<h2 id="signal-alignment-and-template">Signal Alignment and Template</h2>
+<p>This section demostrates signal alignment with the Dynamic Time Warp (DTW) algorithm.</p>
+<h3 id="signal-alignment-visualization">Signal Alignment Visualization</h3>
+<p>A preprocessed signal can be aligned to another preprocessed signal using DTW as follow.
+<div class="highlight"><pre><span></span><code><span class="n">signal_0</span> <span class="o">=</span> <span class="n">load_one_demo_signal_pp</span><span class="p">(</span><span class="n">device</span><span class="o">=</span><span class="s1">&#39;leap&#39;</span><span class="p">,</span> <span class="n">seq</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">signal_1</span> <span class="o">=</span> <span class="n">load_one_demo_signal_pp</span><span class="p">(</span><span class="n">device</span><span class="o">=</span><span class="s1">&#39;leap&#39;</span><span class="p">,</span> <span class="n">seq</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">signal_0</span><span class="o">.</span><span class="n">amplitude_normalize</span><span class="p">()</span>
+<span class="n">signal_1</span><span class="o">.</span><span class="n">amplitude_normalize</span><span class="p">()</span>
+
+<span class="n">signal_1_aligned</span> <span class="o">=</span> <span class="n">signal_1</span><span class="o">.</span><span class="n">align_to</span><span class="p">(</span><span class="n">signal_0</span><span class="p">)</span>
+
+<span class="n">aligned</span> <span class="o">=</span> <span class="p">[</span><span class="n">signal_0</span><span class="p">,</span> <span class="n">signal_1_aligned</span><span class="p">]</span>
+<span class="n">unaligned</span> <span class="o">=</span> <span class="p">[</span><span class="n">signal_0</span><span class="p">,</span> <span class="n">signal_1</span><span class="p">]</span>
+
+<span class="n">signal_vis_comparison_side_by_side</span><span class="p">(</span><span class="n">aligned</span><span class="p">,</span> <span class="n">unaligned</span><span class="p">,</span> <span class="n">start_col</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">nr_cols</span><span class="o">=</span><span class="mi">9</span><span class="p">)</span>
+</code></pre></div>
+The difference before the alignment and after the alignment is shown in the following figure.</p>
+<p><img alt="Signal alignment example." src="../pics/alignment.png" /></p>
+<p>These two signals are generated by the same user (i.e., "alice") writing the same content (i.e., "FMKit"). As mentioned previously in the "<a href="tutorial_signal.md#signal-comparison">Signal Comparison</a>" subsection, even for signals generated by the same user writing the same content, there are differences, mainly in the writing speed and the intensity of strokes. As the figure shows, these differences can be reduced by aligning one signal to the other signal along the time using DTW. </p>
+<p>The function "signal_vis_comparison_side_by_side()" is designed to plot two sets of signals side by side on two columns for comparison.</p>
+<h3 id="warping-path-visualization">Warping Path Visualization</h3>
+<p>The detailed warping path of the alignment of on signal to another signal (or a template) can be visualized as follows.
+<div class="highlight"><pre><span></span><code><span class="n">signal_0</span> <span class="o">=</span> <span class="n">load_one_demo_signal_pp</span><span class="p">(</span><span class="n">device</span><span class="o">=</span><span class="s1">&#39;leap&#39;</span><span class="p">,</span> <span class="n">seq</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">signal_1</span> <span class="o">=</span> <span class="n">load_one_demo_signal_pp</span><span class="p">(</span><span class="n">device</span><span class="o">=</span><span class="s1">&#39;leap&#39;</span><span class="p">,</span> <span class="n">seq</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">signal_0</span><span class="o">.</span><span class="n">amplitude_normalize</span><span class="p">()</span>
+<span class="n">signal_1</span><span class="o">.</span><span class="n">amplitude_normalize</span><span class="p">()</span>
+
+<span class="n">signal_1_aligned</span> <span class="o">=</span> <span class="n">signal_1</span><span class="o">.</span><span class="n">align_to</span><span class="p">(</span><span class="n">signal_0</span><span class="p">,</span> <span class="n">keep_dist_matrix</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">alignment_vis</span><span class="p">(</span><span class="n">signal_1</span><span class="p">,</span> <span class="n">signal_0</span><span class="p">,</span> <span class="n">signal_1_aligned</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="mi">9</span><span class="p">)</span>
+</code></pre></div>
+The result is shown in the following figure.</p>
+<p><img alt="Warping path example." src="../pics/warping_path.png" /></p>
+<p>The subplot named "template" means the template signal (i.e., "signal_0" in this demo), and the subplot named "signal" is the signal that is aligned to the template signal (i.e., "signal_1" in this demo). This figure essentially shows the DTW distance matrix (i.e., the "dist_matrix" attribute of the "signal_1_aligned") together with the two signals. The specific sensor axis representing the signal and the template can be selected by setting the "col" parameter to the sensor axis index.</p>
+<p>The warping path can also be visualized in 3D as follows.
+<div class="highlight"><pre><span></span><code><span class="n">signal_0</span> <span class="o">=</span> <span class="n">load_one_demo_signal_pp</span><span class="p">(</span><span class="n">device</span><span class="o">=</span><span class="s1">&#39;leap&#39;</span><span class="p">,</span> <span class="n">seq</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">signal_1</span> <span class="o">=</span> <span class="n">load_one_demo_signal_pp</span><span class="p">(</span><span class="n">device</span><span class="o">=</span><span class="s1">&#39;leap&#39;</span><span class="p">,</span> <span class="n">seq</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">signal_0</span><span class="o">.</span><span class="n">amplitude_normalize</span><span class="p">()</span>
+<span class="n">signal_1</span><span class="o">.</span><span class="n">amplitude_normalize</span><span class="p">()</span>
+
+<span class="n">signal_1_aligned</span> <span class="o">=</span> <span class="n">signal_1</span><span class="o">.</span><span class="n">align_to</span><span class="p">(</span><span class="n">signal_0</span><span class="p">,</span> <span class="n">keep_dist_matrix</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">alignment_vis</span><span class="p">(</span><span class="n">signal_1</span><span class="p">,</span> <span class="n">signal_0</span><span class="p">,</span> <span class="n">signal_1_aligned</span><span class="p">,</span> <span class="n">plot_3d</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</code></pre></div>
+The result is shown in the following figure.</p>
+<p><img alt="Warping path example." src="../pics/warping_path_3d.png" /></p>
+<p>This 3D visualization plot the DTW distance matrix in 3D.</p>
+<p>These two signals are generated by the same user (i.e., "alice") writing the same content (i.e., "FMKit"), and this user can maintain the same writing behavior very well across multiple repetitions. Hence, these two signals can be alsigned very well and the warping path is close to the diagonal line. In fact, any signal can be aligned to another signal using DTW regardless whether they are generated by the same user or writing the same content. The warping path can vary significantly based on the shapes of the two signals.</p>
+<h3 id="template-visualization">Template Visualization</h3>
+<p>For multiple repetitions of the in-air-handwriting of the same content by the same user, they can be all aligned to one signal and to construct a template by taking the average of them as follows.</p>
+<p><div class="highlight"><pre><span></span><code><span class="n">signals</span> <span class="o">=</span> <span class="n">load_demo_signals_pp</span><span class="p">(</span><span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">,</span> <span class="n">user</span><span class="o">=</span><span class="n">user</span><span class="p">,</span> <span class="n">cid</span><span class="o">=</span><span class="n">cid</span><span class="p">)</span>
+
+<span class="n">template</span> <span class="o">=</span> <span class="n">FMSignalTemplate</span><span class="o">.</span><span class="n">construct_from_signals</span><span class="p">(</span><span class="n">signals</span><span class="p">,</span> <span class="n">template_index</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="n">signals_alinged</span> <span class="o">=</span> <span class="n">template</span><span class="o">.</span><span class="n">signals_aligned</span>
+
+<span class="n">signal_vis_comparison_side_by_side</span><span class="p">(</span><span class="n">signals_alinged</span><span class="p">,</span> <span class="n">signals</span><span class="p">,</span> <span class="n">start_col</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">nr_cols</span><span class="o">=</span><span class="mi">9</span><span class="p">)</span>
+<span class="n">signal_vis_comparison_side_by_side</span><span class="p">(</span><span class="n">signals_alinged</span><span class="p">,</span> <span class="p">[</span><span class="n">template</span><span class="p">],</span> <span class="n">start_col</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">nr_cols</span><span class="o">=</span><span class="mi">9</span><span class="p">)</span>
+</code></pre></div>
+This will first show the comparison of ten aligned signals and the original ones as follows. The aligned signals are on the left and the original ones are on the right.</p>
+<p><img alt="Ten signals aligned." src="../pics/alignment_ten_signals.png" /></p>
+<p>After closing the first plot, the aligned signals and the template are shown in the following figure.</p>
+<p><img alt="Template." src="../pics/template.png" /></p>
+<p>The function "FMSignalTemplate.construct_from_signals()" does alignment and template construction. The "template_index" parameter indicate which signal in the set is used as the "base signal" so that other signals are aligned to it. A template, i.e., an instance of the "<a href="">FMSignalTemplate</a>", is essentially the same as a preprocessed signal, only with an additional attribute to keep the variations of the original signals. </p>
+<p>A template can be saved to a file as follows, which is the same as saving a signal. The mode can be either "csv" or "npy".
+<div class="highlight"><pre><span></span><code><span class="n">fn</span> <span class="o">=</span> <span class="s1">&#39;../date_demo/leap_template/alice_FMKit_0&#39;</span>
+<span class="n">template</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;csv&#39;</span><span class="p">)</span>
+</code></pre></div></p>
+<p>A template can also be loaded from a file as follows, which is also the same as loading a signal.
+<div class="highlight"><pre><span></span><code><span class="n">fn</span> <span class="o">=</span> <span class="s1">&#39;../date_demo/leap_template/alice_FMKit_0&#39;</span>
+<span class="n">template</span> <span class="o">=</span> <span class="n">FMSignalTemplate</span><span class="o">.</span><span class="n">construct_from_file</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;csv&#39;</span><span class="p">)</span>
+</code></pre></div></p>
+<p>A template also has the "user" attribute, the "cid" attribute, and the "seq" attribute. If a template is constructed from a set of signals, its "user" and "cid" attributes are copied from the "base signal" indicated by the "template_index" parameter in "FMSignalTemplate.construct_from_signals()". The "seq" attribute is always set to 0.</p>
+<p>The demo also provide two helper functions as follows, one for loading, and the other for saving.
+<div class="highlight"><pre><span></span><code><span class="n">template</span> <span class="o">=</span> <span class="n">load_one_demo_template</span><span class="p">()</span>
+<span class="n">save_one_demo_template</span><span class="p">(</span><span class="n">template</span><span class="p">)</span>
+</code></pre></div></p>
+<h3 id="improving-dtw-efficiency">Improving DTW Efficiency</h3>
+<p>The <a href="../fmsignal-reference/#fmsignal.dtw">default DTW implementation</a> is in Python, which is relatively inefficient because it will iterate through the two signal data and the n-by-m DTW distance matrix (which are all NumPy ndarrays). To improve the efficiency, a version implemented in C is provided under the "<a href="https://github.com/duolu/fmkit/tree/master/code_utilities">code_utilities</a>" folder. It can be installed as follows.</p>
+<div class="highlight"><pre><span></span><code># cd code_utilities
+# python3 ./setup.py build
+# sudo python3 setup.py install --record ./files.txt
+</code></pre></div>
+<p>If the build step cannot find numpy header files, run the following first.
+<div class="highlight"><pre><span></span><code># export CFLAGS=&quot;-I $HOME/.local/lib/python3.6/site-packages/numpy/core/include $CFLAGS&quot;
+</code></pre></div>
+Here the path after "-I" is the place where NumPy is installed.</p>
+<p>This will install a package named "fmkit_utilities" which introduces a function "fmkit_utilities.dtw_c()". It will be shown as a "built-in" function because it is implemented in C code. The "<a href="../fmsignal-reference/">fmsignal.py</a>" module has a Python wrapper function "<a href="../fmsignal-reference/#fmsignal.dtw_c">dtw_c()</a>" that calls the C implementation. This wrapper function takes the exact same format of parameters as the default Python implementation.</p>
+<p>The "<a href="../fmsignal-reference/">fmsignal.py</a>" module will use the C implementation automatically if the "fmkit_utilities" package is installed. This is made using the following code at the beginning of the module.</p>
+<div class="highlight"><pre><span></span><code><span class="k">try</span><span class="p">:</span>
+    <span class="kn">import</span> <span class="nn">fmkit_utilities</span>
+    <span class="n">DTW_METHOD</span> <span class="o">=</span> <span class="s2">&quot;c&quot;</span>
+<span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+    <span class="n">DTW_METHOD</span> <span class="o">=</span> <span class="s2">&quot;python&quot;</span>
+</code></pre></div>
+<p>The only method that invokes "<a href="../fmsignal-reference/#fmsignal.dtw">dtw()</a>" or "<a href="fmsignal-reference/#fmsignal.dtw_c">dtw_c()</a>" is "<a href="../fmsignal-reference/#fmsignal.FMSignal.align_to">FMSignal.align_to()</a>", i.e., aligning on signal to another signal or template. It takes a parameter named "method", which is set to "DTW_METHOD" by default. Users can choose which implementations to use as follows.
+<div class="highlight"><pre><span></span><code><span class="n">signal_aligned</span> <span class="o">=</span> <span class="n">signal</span><span class="o">.</span><span class="n">align_to</span><span class="p">(</span><span class="n">template</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;python&quot;</span><span class="p">)</span> <span class="c1"># This uses the Python implementation.</span>
+</code></pre></div>
+Or
+<div class="highlight"><pre><span></span><code><span class="n">signal_aligned</span> <span class="o">=</span> <span class="n">signal</span><span class="o">.</span><span class="n">align_to</span><span class="p">(</span><span class="n">template</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;c&quot;</span><span class="p">)</span> <span class="c1"># This uses the C implementation.</span>
+</code></pre></div></p>
+<p>Note that the C implementation is kind of "fragile", and hence, it is recommended to always use the wrapper "<a href="fmsignal-reference/#fmsignal.dtw_c">FMSignal.dtw_c()</a>" instead of directly using the "fmkit_utilities.dtw_c()".</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../arch/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                The FMKit Architecture
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../fmsignal-reference/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                fmsignal
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/vendor.53cc9318.min.js"></script>
+      <script src="../assets/javascripts/bundle.e9c9f54f.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "..",
+          features: [],
+          search: Object.assign({
+            worker: "../assets/javascripts/worker/search.9c0e82ba.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>

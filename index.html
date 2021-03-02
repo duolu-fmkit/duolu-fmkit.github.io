@@ -1,0 +1,556 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="shortcut icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.7">
+    
+    
+      
+        <title>FMKit</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.cb6bc1d0.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.39b8e14a.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+      
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#welcome-to-fmkit" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="." title="FMKit" class="md-header-nav__button md-logo" aria-label="FMKit">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      <div class="md-header-nav__ellipsis">
+        <div class="md-header-nav__topic">
+          <span class="md-ellipsis">
+            FMKit
+          </span>
+        </div>
+        <div class="md-header-nav__topic">
+          <span class="md-ellipsis">
+            
+              Home
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="." title="FMKit" class="md-nav__button md-logo" aria-label="FMKit">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    FMKit
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Home
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="." class="md-nav__link md-nav__link--active">
+        Home
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-fmkit-code-library" class="md-nav__link">
+    The FMKit Code Library
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-fmkit-data-repository" class="md-nav__link">
+    The FMKit Data Repository
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#authors" class="md-nav__link">
+    Authors
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#papers-and-patents" class="md-nav__link">
+    Papers and Patents
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#license" class="md-nav__link">
+    License
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#acknowledgments" class="md-nav__link">
+    Acknowledgments
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="arch/" class="md-nav__link">
+        The FMKit Architecture
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="manual_signal/" class="md-nav__link">
+        User Manual - Signal
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" >
+      
+      <label class="md-nav__link" for="nav-4">
+        Code Reference
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Code Reference" data-md-level="1">
+        <label class="md-nav__title" for="nav-4">
+          <span class="md-nav__icon md-icon"></span>
+          Code Reference
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="fmsignal-reference/" class="md-nav__link">
+        fmsignal
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="fmsignal_vis-reference/" class="md-nav__link">
+        fmsignal_vis
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="pyrotation-reference/" class="md-nav__link">
+        pyrotation
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-fmkit-code-library" class="md-nav__link">
+    The FMKit Code Library
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-fmkit-data-repository" class="md-nav__link">
+    The FMKit Data Repository
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#authors" class="md-nav__link">
+    Authors
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#papers-and-patents" class="md-nav__link">
+    Papers and Patents
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#license" class="md-nav__link">
+    License
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#acknowledgments" class="md-nav__link">
+    Acknowledgments
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="welcome-to-fmkit">Welcome to FMKit</h1>
+<p><strong>FMKit</strong> (i.e., <em><strong>F</strong>inger <strong>M</strong>otion analysis software <strong>Kit</strong></em>) is a code library and data repository for finger motion based in-air-handwriting analysis. Besides, we have also built a demo system for FMKit. See the <a href="https://youtu.be/O3Jqq9yqJSE">video</a> and <a href="https://www.youtube.com/watch?v=asxqpF7dH10">demo</a>.</p>
+<p><a href="https://www.youtube.com/watch?v=O3Jqq9yqJSE"><img alt="FMKit Demo" src="https://img.youtube.com/vi/O3Jqq9yqJSE/0.jpg" /></a></p>
+<h2 id="the-fmkit-code-library">The FMKit Code Library</h2>
+<p>The FMKit library contains a set of Python code and scripts to model and process in-air-handwriting signals. See the "<a href="https://github.com/duolu/fmkit">FMKit GitHub repository</a>". An overview is shown as follows.</p>
+<ul>
+<li>code_fmkit ---&gt; The main library code written in Python. <ul>
+<li>The "<a href="fmsignal-reference/">fmsignal.py</a>" module contains the classes modeling the finger motion signal. </li>
+<li>The "<a href="fmsignal_vis-reference/">fmsignal_vis.py</a>" module contains functions to plot and animate the signal and the trajectory.</li>
+<li>The "<a href="fmsignal_demo-reference.md">fmsignal_demo.py</a>" module contains demo code for the <a href="manual_signal/">user manual on signal manipulation</a>.</li>
+<li>The "pyrotation" module is copied from the <a href="https://github.com/duolu/pyrotation">pyrotation</a> project, which is necessary for finger motion signal preprocessing.</li>
+</ul>
+</li>
+<li>code_utilities ---&gt; Utility code written in C to speed up the Dynamic Time Warping calculation.</li>
+<li>data_demo ---&gt; Some example in-air-handwriting signals, collected using two devices.</li>
+<li>meta_demo ---&gt; Metadata of the datasets.</li>
+</ul>
+<p>The FMKit code library requires the following software packages</p>
+<ul>
+<li>Python 3 (tested with Python 3.6.9)</li>
+<li>NumPy (tested with NumPy 1.19.5)</li>
+<li>Matplotlib (tested with 3.1.2)</li>
+</ul>
+<p>To use this code library, just download the Python modules under the "code_fmkit" folder and incorporate into your project.</p>
+<h2 id="the-fmkit-data-repository">The FMKit Data Repository</h2>
+<p>The FMKit data repository contains multiple datasets, all collected using two types of devices (shown in the following figure): a wearable device (a custom-made data glove with inertial sensors) and a contactless 3D camera (the Leap Motion controller). The glove has a few variants with slightly different form factors (e.g., glove or hand band) and microcontrollers, but the essential motion sensors and the obtained signals are identical.</p>
+<p><img alt="Device illustration." src="pics/devices.png" /></p>
+<p>Currently, the following datasets are available. See the "<a href="arch/#the-fmkit-data-repository">The FMKit Data Repository</a>" section in "The FMKit Architecture" document for further details.</p>
+<p><strong>(1) ID-passcode</strong>: This dataset contains in-air-handwriting signals of ID strings and passcodes by users for login through a gesture interface.</p>
+<p><strong>(2) ID-passcode-collision</strong>: This dataset contains in-air-handwriting signals of ID strings and passcodes by imposters (knowing the contents but without seeing the original users' hand movements). The contents of ID strings and passcodes are the same as the dataset "ID-passcode". </p>
+<p><strong>(3) ID-passcode-spoofing</strong>: This dataset contains in-air-handwriting signals of ID strings and passcodes by imposters (knowing the contents and seeing the original users' hand movements). The contents of ID strings and passcodes are the same as the dataset "ID-passcode".</p>
+<p><strong>(4) ID-passcode-persistence</strong>: This dataset contains in-air-handwriting signals of ID strings and passcodes by users for multiple sessions in different days. The contents of ID strings and passcodes are the same as the dataset "ID-passcode".</p>
+<p><strong>(5) word-210</strong>: This dataset contains in-air-handwriting signals of 210 English words and 210 Chinese words.</p>
+<p><strong>(6) FMCode-survey</strong>: This dataset contains the survey results on the subjective evaluation of the usability of a gesture sign-in system (i.e., <a href="https://arxiv.org/abs/1808.00130">FMCode</a>).</p>
+<p>This dataset construction effort has IRB approval from the authors' institute (Arizona State University STUDY00008279 and STUDY00010539). Currently, the "word-210" dataset is openly available <a href="https://drive.google.com/drive/folders/1RXj0t8NMYt_Jr5lW-BIeAIxw4aX5VshV?usp=sharing">here</a>. If you would like to use other datasets related to in-air-handwriting of ID and passcode, please send an email application to our academic advisor Dr. Dijiang Huang (see the "Authors" section below). </p>
+<h2 id="authors">Authors</h2>
+<ul>
+<li><strong>Duo Lu &lt; duolu AT asu DOT edu &gt;</strong> - main contributor, current maintainer of the project.</li>
+<li><strong>Yuli Deng &lt; ydeng19 AT asu DOT edu &gt;</strong> - contributor.</li>
+<li><strong>Linzhen Luo &lt; lluo21 AT asu DOT edu &gt;</strong> - contributor.</li>
+<li><strong>Dijiang Huang &lt; dijiang.huang AT asu DOT edu &gt;</strong> - our academic advisor and sponsor.</li>
+</ul>
+<h2 id="papers-and-patents">Papers and Patents</h2>
+<ul>
+<li>
+<p>Dijiang Huang, Duo Lu, "<strong>Three-Dimensional In-The-Air Finger Motion based User Login Framework for Gesture Interface</strong>", <em>US Patent 10,877,568, 2020.</em> <a href="https://patents.google.com/patent/US10877568B2/en">[link]</a></p>
+</li>
+<li>
+<p>Duo Lu, Linzhen Luo, Dijiang Huang, Yezhou Yang, "<strong>FMKit: An In-Air-Handwriting Analysis Library and Data Repository.</strong>" <em>CVPR Workshop on Computer Vision for Augmented and Virtual Reality, 2020.</em> <a href="https://github.com/duolu/fmkit/blob/master/papers/fmkit.pdf">[pdf]</a> <a href="https://mixedreality.cs.cornell.edu/workshop/2020/papers#block-93cead2afaf5f6895a67">[link]</a> <a href="https://youtu.be/O3Jqq9yqJSE">[video]</a></p>
+</li>
+<li>Duo Lu, Dijiang Huang, "<strong>FMCode: A 3D In-the-Air Finger Motion Based User Login Framework for Gesture Interface.</strong>" <em>arXiv preprint arXiv:1808.00130, 2018.</em> <a href="https://arxiv.org/pdf/1808.00130.pdf">[pdf]</a> <a href="https://arxiv.org/abs/1808.00130">[link]</a></li>
+<li>Duo Lu, Dijiang Huang, "<strong>FMHash: Deep Hashing of In-Air-Handwriting for User Identification.</strong>" <em>in Proceedings of the International Conference on Communication (ICC), 2019</em> <a href="https://arxiv.org/pdf/1806.03574.pdf">[pdf]</a> <a href="https://arxiv.org/abs/1806.03574">[link]</a> <a href="https://github.com/duolu/fmkit/blob/master/papers/fmhash_slides.pdf">[slides]</a> <a href="https://www.youtube.com/watch?v=MyaWe7RX8oE">[video]</a></li>
+<li>Duo Lu, Dijiang Huang, Yuli Deng, and Adel Alshamrani. "<strong>Multifactor user authentication with in-air-handwriting and hand geometry.</strong>" <em>In 2018 International Conference on Biometrics (ICB), 2018.</em> <a href="https://github.com/duolu/fmkit/blob/master/papers/multifactor.pdf">[pdf]</a> <a href="https://ieeexplore.ieee.org/document/8411230">[link]</a> <a href="https://github.com/duolu/fmkit/blob/master/papers/multifactor_slides.pdf">[slides]</a> <a href="https://github.com/duolu/fmkit/blob/master/papers/multifactor_poster.pdf">[poster]</a></li>
+<li>Duo Lu, Kai Xu, and Dijiang Huang, "<strong>A Data Driven In-Air-Handwriting Biometric Authentication System.</strong>", <em>in Proceedings of the International Joint Conference on Biometrics (IJCB), 2017.</em> <a href="https://github.com/duolu/fmkit/blob/master/papers/data-driven.pdf">[pdf]</a> <a href="https://ieeexplore.ieee.org/document/8272739">[link]</a> <a href="https://github.com/duolu/fmkit/blob/master/papers/data-driven_slides.pdf">[slides]</a></li>
+</ul>
+<h2 id="license">License</h2>
+<p>This project is licensed under the MIT License - see the <a href="https://github.com/duolu/fmkit/blob/master/LICENSE.md">LICENSE.md</a> file for details</p>
+<h2 id="acknowledgments">Acknowledgments</h2>
+<p>We would like to thank all participants and volunteers who helped us collecting the data.</p>
+<p>This project is supported by NSF CCRI award <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=1925709">#1925709</a>.</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+        
+          <a href="arch/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                The FMKit Architecture
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="assets/javascripts/vendor.53cc9318.min.js"></script>
+      <script src="assets/javascripts/bundle.e9c9f54f.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: ".",
+          features: [],
+          search: Object.assign({
+            worker: "assets/javascripts/worker/search.9c0e82ba.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>
